@@ -16,6 +16,7 @@ export interface ExperienceEntry {
 export interface ShippedApp {
   name: string;
   url: string;
+  playStoreUrl?: string;
   icon: string;
   category: string;
   developer: string;
@@ -153,6 +154,7 @@ export const shippedApps: ShippedApp[] = [
   {
     name: 'The Daily Pour',
     url: 'https://apps.apple.com/us/app/the-daily-pour/id6502606142',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.bottleraiders',
     icon: '/assets/apps/the-daily-pour.jpg',
     category: 'Food & Drink',
     developer: 'Mediaite LLC',
@@ -180,6 +182,7 @@ export const shippedApps: ShippedApp[] = [
   {
     name: 'The NotME App',
     url: 'https://apps.apple.com/us/app/the-notme-app/id6745784550',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.thenotme.app',
     icon: '/assets/apps/notme.jpg',
     category: 'Lifestyle',
     developer: 'Not Me LLC',
@@ -242,6 +245,27 @@ export const skills: string[] = [
   'Swift', 'SwiftUI', 'SwiftData', 'Flutter', 'Dart', 'REST APIs',
   'Firebase', 'Crashlytics', 'Firestore', 'AWS Amplify', 'Fastlane',
   'GitHub Actions', 'MCP', 'Claude Code', 'CLI tooling',
+];
+
+export interface TechItem {
+  name: string;
+  icon: string;
+  /** Matches a language name in the auto-synced skills.json, to show a live usage badge. */
+  languageKey?: string;
+}
+
+export const techStack: TechItem[] = [
+  { name: 'Swift', icon: '/assets/icons/swift.svg', languageKey: 'Swift' },
+  { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
+  { name: 'Dart', icon: '/assets/icons/dart.svg', languageKey: 'Dart' },
+  { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
+  { name: 'Firebase', icon: '/assets/icons/firebase.svg' },
+  { name: 'AWS Amplify', icon: '/assets/icons/aws-amplify.svg' },
+  { name: 'Fastlane', icon: '/assets/icons/fastlane.svg' },
+  { name: 'GitHub Actions', icon: '/assets/icons/github-actions.svg' },
+  { name: 'Astro', icon: '/assets/icons/astro.svg' },
+  { name: 'Xcode', icon: '/assets/icons/xcode.svg' },
+  { name: 'Claude / Anthropic', icon: '/assets/icons/anthropic.svg' },
 ];
 
 export const faqs: FaqEntry[] = [

@@ -1,0 +1,32 @@
+---
+import { techStack } from '../data/resume';
+---
+
+<section id="stack">
+  <div class="section-head">
+    <span class="section-index mono">04</span>
+    <h2>Tech stack</h2>
+  </div>
+  <p>The tools behind everything on this page, native, cross-platform, cloud, and AI.</p>
+
+  <div class="tech-grid" id="tech-grid">
+    {techStack.map((t) => (
+      <div class="tech-tile" data-language-key={t.languageKey}>
+        <img src={t.icon} alt="" width="28" height="28" />
+        <span class="tech-name">{t.name}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="sync-note mono" id="tech-sync-note">Checking sync status…</div>
+</section>
+
+<script>
+  import { syncTechStack } from '../scripts/skills';
+
+  const grid = document.getElementById('tech-grid');
+  const note = document.getElementById('tech-sync-note');
+  if (grid) {
+    syncTechStack(grid, note);
+  }
+</script>

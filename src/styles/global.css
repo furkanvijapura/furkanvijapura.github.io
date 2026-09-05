@@ -1,8 +1,8 @@
 /* ==========================================================================
-   Furkan Vijapura — Senior Mobile Engineer (iOS & Flutter) portfolio
+   Furkan Vijapura, Senior Mobile Engineer (native, cross-platform, serverless, AI)
    Design concept: a career read as a changelog. Document-like, left-aligned,
    dark "editor" surface. Type: Space Grotesk (display) + Public Sans (body)
-   + IBM Plex Mono (structural/meta: versions, dates, ratings, tags).
+   + IBM Plex Mono (structural/meta: versions, dates, tags, sync badges).
    ========================================================================== */
 
 :root {
@@ -369,7 +369,7 @@ section:last-of-type { border-bottom: none; }
   transition: border-color .15s ease, transform .15s ease;
 }
 
-.app-card:hover { border-color: var(--accent-dim); transform: translateY(-1px); }
+.app-card:hover { border-color: var(--accent-dim); }
 
 .app-icon {
   width: 64px; height: 64px;
@@ -389,7 +389,22 @@ section:last-of-type { border-bottom: none; }
   flex-wrap: wrap;
 }
 
-.app-desc { font-size: 0.9rem; color: var(--text-dim); margin: 0; }
+.app-desc { font-size: 0.9rem; color: var(--text-dim); margin: 0 0 12px; }
+
+.app-links {
+  display: flex;
+  gap: 16px;
+}
+
+.app-links a {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--accent-dim);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.app-links a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ------------------------------ services ------------------------------ */
 
@@ -427,6 +442,55 @@ section:last-of-type { border-bottom: none; }
   font-size: 0.72rem;
   color: var(--accent-dim);
   margin-top: 2px;
+}
+
+/* ------------------------------ tech stack ------------------------------ */
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 22px;
+}
+
+.tech-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 18px 16px;
+  background: var(--surface);
+  color: var(--text-faint);
+  transition: color .15s ease;
+}
+
+.tech-tile img { width: 26px; height: 26px; filter: grayscale(1); opacity: 0.7; transition: opacity .15s ease, filter .15s ease; }
+
+.tech-tile:hover { color: var(--text); }
+.tech-tile:hover img { filter: grayscale(0); opacity: 1; }
+
+.tech-tile.synced { color: var(--text-dim); }
+
+.tech-name { font-family: var(--font-display); font-size: 0.86rem; }
+
+.tech-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+}
+
+.sync-note {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-top: 12px;
 }
 
 /* ------------------------------ skills / certs / education ------------------------------ */
@@ -488,9 +552,61 @@ section:last-of-type { border-bottom: none; }
 .contact-link:hover { border-color: var(--accent-dim); }
 .contact-link .arrow { color: var(--text-faint); font-family: var(--font-mono); }
 
-footer.site-footer {
+/* ------------------------------ pro footer ------------------------------ */
+
+.pro-footer {
+  margin-top: 24px;
+  padding: 48px 40px 32px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.pro-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  max-width: var(--max);
+}
+
+.pro-footer-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.pro-footer-col p { font-size: 0.86rem; max-width: 32ch; }
+
+.pro-footer-cta {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-dim);
+}
+
+.pro-footer-heading {
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+
+.pro-footer-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+
+.pro-footer-list a, .pro-footer-list span {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.pro-footer-list a:hover { color: var(--accent); }
+
+.pro-footer-bottom {
+  max-width: var(--max);
   margin-top: 40px;
-  padding-top: 24px;
+  padding-top: 20px;
   border-top: 1px solid var(--line-soft);
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -561,4 +677,9 @@ footer.site-footer {
   .entry { grid-template-columns: 52px 1fr; gap: 14px; }
   .app-card { grid-template-columns: 52px 1fr; }
   .app-icon { width: 52px; height: 52px; }
+
+  .pro-footer { margin: 24px -20px -80px; padding: 40px 20px 100px; }
+  .pro-footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .pro-footer-bottom { flex-direction: column; gap: 6px; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
 }

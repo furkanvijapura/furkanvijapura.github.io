@@ -8,12 +8,12 @@ import { shippedApps } from '../data/resume';
     <h2>Shipped, live, verifiable</h2>
   </div>
   <p style="margin-bottom:22px;">
-    Four apps currently live on the App Store from the Wve Labs era, each verifiable on its own listing.
+    Four apps currently live from the Wve Labs era, two of them on both the App Store and Google Play, each verifiable on its own listing.
   </p>
 
   <div class="apps-grid">
     {shippedApps.map((app) => (
-      <a class="app-card" href={app.url} target="_blank" rel="noopener">
+      <div class="app-card">
         <img class="app-icon" src={app.icon} alt={`${app.name} app icon`} width="64" height="64" />
         <div>
           <div class="app-name">{app.name}</div>
@@ -22,8 +22,14 @@ import { shippedApps } from '../data/resume';
             <span>{app.developer}</span>
           </div>
           <p class="app-desc">{app.description}</p>
+          <div class="app-links">
+            <a href={app.url} target="_blank" rel="noopener">App Store <span class="mono">→</span></a>
+            {app.playStoreUrl && (
+              <a href={app.playStoreUrl} target="_blank" rel="noopener">Google Play <span class="mono">→</span></a>
+            )}
+          </div>
         </div>
-      </a>
+      </div>
     ))}
   </div>
 </section>
