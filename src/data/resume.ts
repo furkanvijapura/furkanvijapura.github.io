@@ -196,7 +196,7 @@ export const services: Service[] = [
     title: 'iOS Native Development',
     tag: 'Swift · SwiftUI · SwiftData',
     description:
-      'Native iOS apps carried from architecture through App Store release: UIKit and SwiftUI, offline storage, and performance tuning.',
+      'Native iOS apps carried from architecture through App Store release: UIKit and SwiftUI, offline storage, computer vision with ARKit and the Vision framework, and performance tuning.',
     evidence: 'Evidence: 9+ yrs, 5 companies · Coursera "Programming in Swift 5" · Udemy SwiftUI/Swift 6',
   },
   {
@@ -244,7 +244,7 @@ export const certifications: CertEntry[] = [
 export const skills: string[] = [
   'Swift', 'SwiftUI', 'SwiftData', 'Flutter', 'Dart', 'REST APIs',
   'Firebase', 'Crashlytics', 'Firestore', 'AWS Amplify', 'Fastlane',
-  'GitHub Actions', 'MCP', 'Claude Code', 'CLI tooling',
+  'GitHub Actions', 'MCP', 'Claude Code', 'ARKit / Vision', 'CLI tooling',
 ];
 
 export interface TechItem {
