@@ -1,0 +1,35 @@
+# Furkan Vijapura
+
+> Senior Mobile Engineer (iOS & Flutter) based in Ahmedabad, India. 9+ years of professional
+> mobile development (since January 2017) across five companies, currently Senior Mobile
+> Developer at Wve Labs (since July 2021). Ships native iOS (Swift, SwiftUI, SwiftData) and
+> cross-platform Flutter apps, and has recently added AI/agentic tooling — Claude Code, MCP
+> server integration, GitHub Actions automation — to his mobile-engineering workflow.
+
+## Verified facts
+
+- Experience: Jan 2017 – present (9+ years), across AGILE Infoways, Discus Business Solutions,
+  WeblineIndia, Ciright Inc., and Wve Labs (current, Senior Mobile Developer, Jul 2021–present).
+- Live App Store products from the Wve Labs era:
+  - The Daily Pour (formerly Bottle Raiders) — AI-powered spirits review app for Dan Abrams'
+    Mediaite. https://apps.apple.com/us/app/the-daily-pour/id6502606142
+  - Puff Count: Quit Vaping Now — 4.3 stars, 2,599 ratings.
+    https://apps.apple.com/us/app/puff-count-quit-vaping-now/id1488580640
+  - The NotME App — consent-verification app. https://apps.apple.com/us/app/the-notme-app/id6745784550
+- Certifications: Anthropic "Claude Code in Action" (Mar 2026), Udemy SwiftUI (2025), Coursera
+  "iOS App Store & In-App Purchases" (2021), Coursera "Programming in Swift 5" (2021), Udemy
+  "Flutter & Dart" (2020), Udemy "Swift and Xcode Development" (2020), Google Digital Unlocked,
+  IICT certification.
+- Education: MCA, Suresh Gyan Vihar University (2020–2022); Master of Mobile Application
+  Development, Ganpat University (2016–2018); BCA, Grow More Group of Institutions (2013–2016).
+
+## Pages
+
+- [Portfolio](https://furkanvijapura.github.io/): full resume, experience timeline, shipped
+  apps, services, and contact info on a single page.
+
+## Contact
+
+- Email: furkanvijapura@gmail.com
+- LinkedIn: https://www.linkedin.com/in/furkanvijapura
+- GitHub: https://github.com/furkanvijapura
