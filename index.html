@@ -110,6 +110,7 @@
         <a href="#shipped">Shipped apps</a>
         <a href="#services">Services</a>
         <a href="#background">Background</a>
+        <a href="#activity">Activity</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -356,9 +357,20 @@
         </div>
       </section>
 
-      <section id="faq">
+      <section id="activity">
         <div class="section-head">
           <span class="section-index mono">05</span>
+          <h2>Recent activity</h2>
+        </div>
+        <p>Pulled live from the GitHub API once a day — not hand-maintained.</p>
+        <ul class="list-plain" id="activity-list">
+          <li><div class="list-sub">Loading…</div></li>
+        </ul>
+      </section>
+
+      <section id="faq">
+        <div class="section-head">
+          <span class="section-index mono">06</span>
           <h2>Frequently asked</h2>
         </div>
 
@@ -378,7 +390,7 @@
 
       <section id="contact">
         <div class="section-head">
-          <span class="section-index mono">06</span>
+          <span class="section-index mono">07</span>
           <h2>Get in touch</h2>
         </div>
         <p>Based in Ahmedabad, India (GMT+5:30) — open to remote work globally.</p>
@@ -409,6 +421,53 @@
     var open = body.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
+
+  var activityList = document.getElementById('activity-list');
+  if (activityList) {
+    fetch('assets/data/activity.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+      .then(function (data) {
+        var items = (data && data.items) || [];
+        activityList.innerHTML = '';
+        if (!items.length) {
+          var empty = document.createElement('li');
+          empty.innerHTML = '<div class="list-sub">No recent public activity.</div>';
+          activityList.appendChild(empty);
+          return;
+        }
+        items.forEach(function (item) {
+          var when = item.pushedAt ? new Date(item.pushedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+          var li = document.createElement('li');
+
+          var link = document.createElement('a');
+          link.className = 'list-title';
+          link.href = item.url;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.style.textDecoration = 'none';
+          link.textContent = item.name;
+          li.appendChild(link);
+
+          if (item.description) {
+            var p = document.createElement('p');
+            p.style.margin = '4px 0 0';
+            p.style.fontSize = '0.88rem';
+            p.textContent = item.description;
+            li.appendChild(p);
+          }
+
+          var meta = document.createElement('div');
+          meta.className = 'list-sub';
+          meta.textContent = [item.language, when].filter(Boolean).join(' · ');
+          li.appendChild(meta);
+
+          activityList.appendChild(li);
+        });
+      })
+      .catch(function () {
+        activityList.innerHTML = '<li><div class="list-sub">Activity feed unavailable right now — see <a href="https://github.com/furkanvijapura" target="_blank" rel="noopener">github.com/furkanvijapura</a> directly.</div></li>';
+      });
+  }
 
   var links = document.querySelectorAll('.rail nav a');
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));

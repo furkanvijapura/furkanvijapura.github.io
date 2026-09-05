@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-09-05T20:01:07.491Z",
+  "items": [
+    {
+      "name": "swifui-furkan-style",
+      "url": "https://github.com/furkanvijapura/swifui-furkan-style",
+      "description": "The skill — swiftui-furkan-style is packaged as a proper SKILL.md (frontmatter + your rules), validated with Anthropic's own skill validator, and it's already active in this session",
+      "language": "Shell",
+      "stars": 0,
+      "pushedAt": "2026-08-22T15:28:25Z"
+    },
+    {
+      "name": "mobile-dev-insights",
+      "url": "https://github.com/furkanvijapura/mobile-dev-insights",
+      "description": null,
+      "language": null,
+      "stars": 0,
+      "pushedAt": "2025-07-13T11:06:54Z"
+    },
+    {
+      "name": "Flutter-demo-Getx-Hive-GoogleMap",
+      "url": "https://github.com/furkanvijapura/Flutter-demo-Getx-Hive-GoogleMap",
+      "description": "Flutter demo for Getx state management, route management , dependancy injection and Hive local database , also include google map to show pindrop",
+      "language": "Dart",
+      "stars": 2,
+      "pushedAt": "2022-03-13T18:20:17Z"
+    },
+    {
+      "name": "GetX_CartDemo_list",
+      "url": "https://github.com/furkanvijapura/GetX_CartDemo_list",
+      "description": "Flutter : GetX state management Deme using Shopping list add cart in single screen (MVC Rx)",
+      "language": "Objective-C",
+      "stars": 0,
+      "pushedAt": "2021-06-06T07:42:13Z"
+    },
+    {
+      "name": "Flutter_BLoC_NewsFeed_Demo",
+      "url": "https://github.com/furkanvijapura/Flutter_BLoC_NewsFeed_Demo",
+      "description": "In this video I will talk about some best practices about using BLoC Pattern and also demonstrate how to use BLoC pattern to consume API.",
+      "language": "Dart",
+      "stars": 0,
+      "pushedAt": "2021-06-02T05:21:48Z"
+    }
+  ]
+}
