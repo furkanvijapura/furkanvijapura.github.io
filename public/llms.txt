@@ -1,10 +1,12 @@
 # Furkan Vijapura
 
-> Senior Mobile Engineer (iOS & Flutter) based in Ahmedabad, India. Over nine years of
-> professional mobile development since January 2017 across five companies, currently Senior
-> Mobile Developer at Wve Labs since July 2021. Ships native iOS (Swift, SwiftUI, SwiftData) and
-> cross-platform Flutter apps, and has recently added AI and agentic tooling such as Claude Code,
-> MCP server integration, and GitHub Actions automation to his mobile engineering workflow.
+> Senior Mobile Engineer based in Ahmedabad, India, working across native iOS, cross-platform
+> Flutter, and serverless mobile backends. Over nine years of professional mobile development
+> since January 2017 across five companies, currently Senior Mobile Developer at Wve Labs since
+> July 2021. Ships native iOS (Swift, SwiftUI, SwiftData) and cross-platform Flutter apps on
+> serverless backends (Firebase, AWS Amplify), and has recently added AI and agentic tooling such
+> as Claude Code, MCP server integration, and GitHub Actions automation to his mobile engineering
+> workflow.
 
 ## Verified facts
 

@@ -52,7 +52,7 @@ export interface SocialLink {
 export const person = {
   name: 'Furkan Vijapura',
   role: 'Senior Mobile Engineer',
-  roleLine: 'iOS (Swift/SwiftUI) & Flutter',
+  roleLine: 'iOS, Flutter, Serverless & AI',
   location: 'Ahmedabad, IN',
   locationFull: 'Ahmedabad, Gujarat, India',
   timezone: 'GMT+5:30',
@@ -63,9 +63,9 @@ export const person = {
   buildTag: 'v5.3 · Wve Labs · current',
   lastUpdated: '2026-09-06',
   lastUpdatedDisplay: '6 Sep 2026',
-  heroHeadingLine1: 'Ships iOS & Flutter apps.',
+  heroHeadingLine1: 'Ships mobile apps across every platform.',
   heroLede:
-    "I'm a Senior Mobile Engineer based in Ahmedabad, India, with nine years taking apps from spec to the App Store. At Wve Labs I've shipped a spirits-scanning app for Dan Abrams' Mediaite, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
+    "I'm a Senior Mobile Engineer based in Ahmedabad, India, with nine years shipping native iOS and cross-platform Flutter apps end to end, backend included. At Wve Labs I've shipped a spirits-scanning app for Dan Abrams' Mediaite, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
 };
 
 export const socials: SocialLink[] = [
@@ -78,7 +78,7 @@ export const socials: SocialLink[] = [
 ];
 
 export const heroStats: Stat[] = [
-  { num: '9+', label: 'years, iOS & Flutter' },
+  { num: '9+', label: 'years shipping mobile' },
   { num: '12', label: 'shipped products' },
   { num: '5', label: 'companies' },
   { num: '8', label: 'certifications' },
@@ -211,10 +211,10 @@ export const services: Service[] = [
     evidence: 'Evidence: Anthropic "Claude Code in Action" cert, Mar 2026 · shipped GitHub Actions automation',
   },
   {
-    title: 'App Store & Release Engineering',
-    tag: 'Fastlane · Firebase · AWS Amplify',
+    title: 'Serverless Backends & Release Engineering',
+    tag: 'Firebase · AWS Amplify · Fastlane',
     description:
-      'Build and release automation, crash reporting, analytics, and cloud backends so releases stop being manual.',
+      'Serverless backends, crash reporting, analytics, and release automation, so shipping stops being manual.',
     evidence:
       'Evidence: Fastlane automation at WeblineIndia, Ciright, Wve Labs · Firebase/Firestore/Crashlytics across every role',
   },
@@ -248,7 +248,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'What does Furkan specialize in?',
     answer:
-      'Native iOS development with Swift and SwiftUI, plus cross-platform Flutter work, with a recent focus on bringing AI and agentic tooling such as Claude Code, MCP, and automated CI review into the mobile engineering workflow itself.',
+      'Native iOS development with Swift and SwiftUI, cross-platform Flutter work, and serverless backends on Firebase and AWS, with a recent focus on bringing AI and agentic tooling such as Claude Code, MCP, and automated CI review into the mobile engineering workflow itself.',
   },
   {
     question: 'How much experience does he have?',
