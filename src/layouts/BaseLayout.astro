@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+import { person, socials, faqs } from '../data/resume';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/assets/img/avatar.jpg', Astro.site);
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: person.name,
+  url: Astro.site?.toString(),
+  image: ogImage.toString(),
+  jobTitle: `${person.role} (${person.roleLine})`,
+  worksFor: { '@type': 'Organization', name: 'Wve Labs' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Ahmedabad',
+    addressRegion: 'Gujarat',
+    addressCountry: 'IN',
+  },
+  email: `mailto:${person.email}`,
+  telephone: person.phoneHref,
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Suresh Gyan Vihar University' },
+    { '@type': 'CollegeOrUniversity', name: 'Ganpat University' },
+  ],
+  knowsAbout: [
+    'iOS Development', 'Swift', 'SwiftUI', 'SwiftData', 'Flutter', 'Dart',
+    'Firebase', 'AWS Amplify', 'Fastlane', 'REST APIs', 'GitHub Actions',
+    'Model Context Protocol', 'Claude Code', 'Mobile App Architecture',
+  ],
+  sameAs: socials.map((s) => s.url),
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <meta name="theme-color" content="#0d1015" />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="profile:first_name" content="Furkan" />
+  <meta property="profile:last_name" content="Vijapura" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(personJsonLd)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+</head>
+<body>
+  <slot />
+</body>
+</html>

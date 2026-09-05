@@ -1,0 +1,32 @@
+---
+---
+
+<section id="activity">
+  <div class="section-head">
+    <span class="section-index mono">05</span>
+    <h2>Recent activity</h2>
+  </div>
+  <p>Pulled live from the GitHub API once a day, not hand-maintained.</p>
+  <ul class="list-plain" id="activity-list">
+    <li><div class="list-sub">Loading…</div></li>
+  </ul>
+
+  <h3 style="font-size:1rem;color:var(--text);margin:28px 0 4px;">Language mix</h3>
+  <p style="margin-bottom:0;">Aggregated monthly across both of Furkan's GitHub accounts.</p>
+  <div class="chip-row" id="language-mix"></div>
+</section>
+
+<script>
+  import { renderActivity } from '../scripts/activity';
+  import { renderLanguageMix } from '../scripts/skills';
+
+  const list = document.getElementById('activity-list');
+  if (list) {
+    renderActivity(list);
+  }
+
+  const mix = document.getElementById('language-mix');
+  if (mix) {
+    renderLanguageMix(mix);
+  }
+</script>

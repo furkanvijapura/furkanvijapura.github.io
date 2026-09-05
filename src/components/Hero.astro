@@ -1,0 +1,23 @@
+---
+import { person, heroStats } from '../data/resume';
+---
+
+<section class="hero" id="about">
+  <h1>{person.heroHeadingLine1}<br />Now wiring <span class="accent">AI into the workflow</span>.</h1>
+  <p class="hero-lede">{person.heroLede}</p>
+
+  <div class="stat-strip">
+    {heroStats.map((s) => (
+      <div class="stat">
+        <span class="num">{s.num}</span>
+        <span class="label">{s.label}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="hero-actions">
+    <a class="btn primary" href="#contact">Get in touch</a>
+    <a class="btn" href="#shipped">See shipped apps</a>
+    <a class="btn" href="https://github.com/furkanvijapura" target="_blank" rel="noopener">github.com/furkanvijapura</a>
+  </div>
+</section>

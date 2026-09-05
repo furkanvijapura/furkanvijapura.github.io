@@ -389,8 +389,6 @@ section:last-of-type { border-bottom: none; }
   flex-wrap: wrap;
 }
 
-.app-meta .rating { color: var(--accent-2); }
-
 .app-desc { font-size: 0.9rem; color: var(--text-dim); margin: 0; }
 
 /* ------------------------------ services ------------------------------ */

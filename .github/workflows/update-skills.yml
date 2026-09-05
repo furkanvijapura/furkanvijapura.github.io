@@ -1,8 +1,8 @@
-name: Update recent activity
+name: Update cross-account skill signal
 
 on:
   schedule:
-    - cron: '0 3 * * *'   # daily at 03:00 UTC
+    - cron: '0 4 1 * *'   # 03:00 UTC on the 1st of each month
   workflow_dispatch: {}
 
 permissions:
@@ -18,19 +18,19 @@ jobs:
         with:
           node-version: 20
 
-      - name: Fetch latest GitHub activity
+      - name: Fetch skill signal from both GitHub accounts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/fetch-activity.mjs
+        run: node scripts/fetch-skills.mjs
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- public/assets/data/activity.json; then
-            echo "No activity changes."
+          if git diff --quiet -- public/assets/data/skills.json; then
+            echo "No skill data changes."
             exit 0
           fi
-          git add public/assets/data/activity.json
-          git commit -m "chore: refresh recent activity data"
+          git add public/assets/data/skills.json
+          git commit -m "chore: refresh cross-account skill signal"
           git push

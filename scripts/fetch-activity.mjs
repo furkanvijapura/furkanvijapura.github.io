@@ -5,7 +5,7 @@
 import { writeFile } from 'node:fs/promises';
 
 const USER = 'furkanvijapura';
-const OUT_PATH = new URL('../assets/data/activity.json', import.meta.url);
+const OUT_PATH = new URL('../public/assets/data/activity.json', import.meta.url);
 const MAX_ITEMS = 5;
 
 async function main() {

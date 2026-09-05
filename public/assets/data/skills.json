@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-09-05T20:30:56.602Z",
+  "accounts": {
+    "furkanvijapura": {
+      "ownRepoCount": 11,
+      "forkedRepoCount": 89,
+      "exploring": [
+        {
+          "name": "GeoLocator",
+          "description": "GeoLocator is a simple and fast IP location finder app that allows you to find the geographical location of an IP address, including the continent, country, city, and more. With GeoLocator, you can also see the location of the IP address on a map, giving you a visual representation of the data.",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/GeoLocator"
+        },
+        {
+          "name": "Flutter-WhatsApp-Clone-Clean-Architecture",
+          "description": "Flutter whatsApp Clone Clean Architecture ",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/Flutter-WhatsApp-Clone-Clean-Architecture"
+        },
+        {
+          "name": "AppStore-Clone-1",
+          "description": "Learn and make a close of AppStore app.",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/AppStore-Clone-1"
+        },
+        {
+          "name": "flutter-iot-app-ui",
+          "description": "Flutter IoT App UI Challenge",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/flutter-iot-app-ui"
+        },
+        {
+          "name": "scan_qr_code",
+          "description": "You will learn how to scan QR code with iOS framework.",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/scan_qr_code"
+        },
+        {
+          "name": "CocoaMQTT",
+          "description": "MQTT for iOS and macOS written with Swift",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/CocoaMQTT"
+        },
+        {
+          "name": "ScrollPager",
+          "description": "A scroll pager that displays a list of tabs (segments) and manages paging between given views",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/ScrollPager"
+        },
+        {
+          "name": "UPCarouselFlowLayout",
+          "description": "A fancy carousel flow layout for UICollectionView on iOS.",
+          "language": null,
+          "url": "https://github.com/furkanvijapura/UPCarouselFlowLayout"
+        }
+      ]
+    },
+    "furkan-wve": {
+      "ownRepoCount": 1,
+      "forkedRepoCount": 16,
+      "exploring": [
+        {
+          "name": "enchanted",
+          "description": "Enchanted is iOS and macOS app for chatting with private self hosted language models such as Llama2, Mistral or Vicuna using Ollama.",
+          "language": "Swift",
+          "url": "https://github.com/furkan-wve/enchanted"
+        },
+        {
+          "name": "Clean-Architecture-Swiftui-MVVM",
+          "description": "SwiftUI sample app using Clean Architecture. Examples of working with local and remote data, dependency injection, unit testing, and more.",
+          "language": null,
+          "url": "https://github.com/furkan-wve/Clean-Architecture-Swiftui-MVVM"
+        },
+        {
+          "name": "assets-for-api-docs",
+          "description": "Static assets for embedding into docs.flutter.io",
+          "language": null,
+          "url": "https://github.com/furkan-wve/assets-for-api-docs"
+        },
+        {
+          "name": "iOSDeviceSupport",
+          "description": "Xcode iPhoneOS (iOS) DeviceSupport files (6.0 - 16.5)",
+          "language": null,
+          "url": "https://github.com/furkan-wve/iOSDeviceSupport"
+        },
+        {
+          "name": "FlutGPT",
+          "description": "FlutGPT utilizes OpenAI's GPT-3 language model to generate text based on user inputs.",
+          "language": "Dart",
+          "url": "https://github.com/furkan-wve/FlutGPT"
+        },
+        {
+          "name": "BetterSegmentedControl",
+          "description": "An easy to use, customizable replacement for UISegmentedControl & UISwitch.",
+          "language": null,
+          "url": "https://github.com/furkan-wve/BetterSegmentedControl"
+        },
+        {
+          "name": "SwiftMessages",
+          "description": "A very flexible message bar for iOS written in Swift.",
+          "language": null,
+          "url": "https://github.com/furkan-wve/SwiftMessages"
+        },
+        {
+          "name": "media_picker_builder",
+          "description": "A Flutter plugin that returns multimedia picker data such as folders and its content path list to build your own custom flutter picker",
+          "language": "Kotlin",
+          "url": "https://github.com/furkan-wve/media_picker_builder"
+        }
+      ]
+    }
+  },
+  "topLanguages": [
+    {
+      "name": "Swift",
+      "bytes": 1217345
+    },
+    {
+      "name": "Objective-C",
+      "bytes": 95829
+    },
+    {
+      "name": "Makefile",
+      "bytes": 80271
+    },
+    {
+      "name": "HTML",
+      "bytes": 40280
+    },
+    {
+      "name": "Dart",
+      "bytes": 36239
+    },
+    {
+      "name": "CSS",
+      "bytes": 19652
+    },
+    {
+      "name": "Shell",
+      "bytes": 3355
+    },
+    {
+      "name": "Ruby",
+      "bytes": 2269
+    },
+    {
+      "name": "C",
+      "bytes": 1680
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 1483
+    },
+    {
+      "name": "Kotlin",
+      "bytes": 401
+    }
+  ]
+}

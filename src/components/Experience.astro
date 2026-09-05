@@ -1,0 +1,32 @@
+---
+import { experience } from '../data/resume';
+---
+
+<section id="experience">
+  <div class="section-head">
+    <span class="section-index mono">01</span>
+    <h2>Experience, read as a changelog</h2>
+  </div>
+
+  <ol class="changelog">
+    {experience.map((entry) => (
+      <li class:list={['entry', { current: entry.current }]}>
+        <div class="entry-version mono">{entry.version}</div>
+        <div>
+          <div class="entry-head">
+            <span class="entry-role">{entry.role}</span>
+            <span class="entry-org">at {entry.org}</span>
+            {entry.current && <span class="tag-current">current</span>}
+          </div>
+          <div class="entry-meta">{entry.dates}</div>
+          <p>{entry.summary}</p>
+          {entry.highlights && (
+            <ul>
+              {entry.highlights.map((h) => <li set:html={h} />)}
+            </ul>
+          )}
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,75 @@
+---
+import { person, socials } from '../data/resume';
+
+const navItems = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#shipped', label: 'Shipped apps' },
+  { href: '#services', label: 'Services' },
+  { href: '#background', label: 'Background' },
+  { href: '#activity', label: 'Activity' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="rail" id="rail">
+  <div class="rail-top">
+    <div class="rail-id">
+      <img class="rail-avatar" src={person.avatar} alt={person.name} width="52" height="52" />
+      <div>
+        <div class="rail-name">{person.name}</div>
+        <div class="rail-role">{person.role}<br />{person.roleLine}</div>
+      </div>
+    </div>
+    <button class="rail-toggle" id="railToggle" aria-expanded="false" aria-controls="railBody">Menu</button>
+  </div>
+
+  <div class="rail-body" id="railBody">
+    <span class="build-tag"><span class="dot"></span>{person.buildTag}</span>
+
+    <nav aria-label="Section navigation">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="rail-social">
+      {socials.map((s) => (
+        <a href={s.url} target="_blank" rel="me noopener">{s.label}</a>
+      ))}
+    </div>
+
+    <div class="rail-updated">
+      Last updated <time datetime={person.lastUpdated}>{person.lastUpdatedDisplay}</time> · {person.location}
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('railToggle');
+  const body = document.getElementById('railBody');
+  if (toggle && body) {
+    toggle.addEventListener('click', () => {
+      const open = body.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  const links = document.querySelectorAll<HTMLAnchorElement>('.rail nav a');
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('main section[id]'));
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          links.forEach((a) => {
+            a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`);
+          });
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    sections.forEach((s) => observer.observe(s));
+  }
+</script>

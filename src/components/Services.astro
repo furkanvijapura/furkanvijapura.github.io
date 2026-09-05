@@ -1,0 +1,20 @@
+---
+import { services } from '../data/resume';
+---
+
+<section id="services">
+  <div class="section-head">
+    <span class="section-index mono">03</span>
+    <h2>What I can take on</h2>
+  </div>
+
+  <div class="services-list">
+    {services.map((s) => (
+      <div class="service">
+        <div class="service-title">{s.title} <span class="service-tag">{s.tag}</span></div>
+        <p>{s.description}</p>
+        <div class="evidence">{s.evidence}</div>
+      </div>
+    ))}
+  </div>
+</section>

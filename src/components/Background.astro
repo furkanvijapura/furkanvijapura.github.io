@@ -1,0 +1,40 @@
+---
+import { education, certifications, skills } from '../data/resume';
+---
+
+<section id="background">
+  <div class="section-head">
+    <span class="section-index mono">04</span>
+    <h2>Background</h2>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-size:1rem;color:var(--text);margin-bottom:10px;">Education</h3>
+      <ul class="list-plain">
+        {education.map((e) => (
+          <li>
+            <div class="list-title">{e.title}</div>
+            <div class="list-sub">{e.sub}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:1rem;color:var(--text);margin-bottom:10px;">Certifications</h3>
+      <ul class="list-plain">
+        {certifications.map((c) => (
+          <li>
+            <div class="list-title">{c.title}</div>
+            <div class="list-sub">{c.sub}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-size:1rem;color:var(--text);margin:32px 0 4px;">Core skills</h3>
+  <div class="chip-row">
+    {skills.map((skill) => <span class="chip">{skill}</span>)}
+  </div>
+</section>

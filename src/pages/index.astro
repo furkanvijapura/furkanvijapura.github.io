@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Rail from '../components/Rail.astro';
+import Hero from '../components/Hero.astro';
+import Experience from '../components/Experience.astro';
+import ShippedApps from '../components/ShippedApps.astro';
+import Services from '../components/Services.astro';
+import Background from '../components/Background.astro';
+import Activity from '../components/Activity.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+
+const title = 'Furkan Vijapura · Senior Mobile Engineer (iOS & Flutter)';
+const description =
+  "Furkan Vijapura is a Senior Mobile Engineer in Ahmedabad, India with nine years building iOS (Swift, SwiftUI) and Flutter apps: 12 shipped products across 5 companies, including Mediaite's The Daily Pour and the Ovvy real estate photography platform. Now applying AI and agentic tooling (Claude Code, MCP, GitHub Actions) to mobile engineering.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="shell">
+    <Rail />
+    <main>
+      <div class="doc">
+        <Hero />
+        <Experience />
+        <ShippedApps />
+        <Services />
+        <Background />
+        <Activity />
+        <Faq />
+        <Contact />
+      </div>
+    </main>
+  </div>
+</BaseLayout>
