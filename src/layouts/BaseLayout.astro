@@ -100,5 +100,43 @@ const appsJsonLd = shippedApps.map((app) => ({
 </head>
 <body>
   <slot />
+
+  <div class="copy-toast" id="copy-toast" role="status" aria-live="polite">
+    <span>Copying's disabled here.</span>
+    <a href="#contact">Get in touch instead →</a>
+    <button type="button" id="copy-toast-close" aria-label="Dismiss">×</button>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var toast = document.getElementById('copy-toast');
+      if (!toast) return;
+      var hideTimer;
+
+      function showToast() {
+        toast.classList.add('visible');
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(hideToast, 5000);
+      }
+      function hideToast() {
+        toast.classList.remove('visible');
+      }
+
+      document.addEventListener('copy', function (e) {
+        e.preventDefault();
+        if (e.clipboardData) {
+          e.clipboardData.setData('text/plain', 'Contact Furkan Vijapura: furkanvijapura@gmail.com');
+        }
+        showToast();
+      });
+      document.addEventListener('cut', function (e) {
+        e.preventDefault();
+        showToast();
+      });
+
+      var closeBtn = document.getElementById('copy-toast-close');
+      if (closeBtn) closeBtn.addEventListener('click', hideToast);
+    })();
+  </script>
 </body>
 </html>
