@@ -1,7 +1,7 @@
 ---
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { techStack } from '../data/resume';
+import { techStack, integrations } from '../data/resume';
 
 interface LanguageStat {
   name: string;
@@ -29,6 +29,7 @@ const bytesByLanguage = new Map(skills.topLanguages.map((l) => [l.name, l.bytes]
   </div>
   <p>The tools behind everything on this page, native, cross-platform, cloud, and AI.</p>
 
+  <h3 style="font-size:1rem;color:var(--text);margin-bottom:10px;">Languages &amp; platforms</h3>
   <div class="tech-grid">
     {techStack.map((t) => {
       const bytes = t.languageKey ? bytesByLanguage.get(t.languageKey) : undefined;
@@ -41,5 +42,15 @@ const bytesByLanguage = new Map(skills.topLanguages.map((l) => [l.name, l.bytes]
         </div>
       );
     })}
+  </div>
+
+  <h3 style="font-size:1rem;color:var(--text);margin:28px 0 10px;">Integrations &amp; tooling</h3>
+  <div class="tech-grid">
+    {integrations.map((t) => (
+      <div class="tech-tile">
+        <img src={t.icon} alt="" width="28" height="28" />
+        <span class="tech-name">{t.name}</span>
+      </div>
+    ))}
   </div>
 </section>

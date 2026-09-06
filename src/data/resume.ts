@@ -284,6 +284,10 @@ export const techStack: TechItem[] = [
   { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
   { name: 'Dart', icon: '/assets/icons/dart.svg', languageKey: 'Dart' },
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
+  { name: 'Node.js', icon: '/assets/icons/node-js.svg' },
+];
+
+export const integrations: TechItem[] = [
   { name: 'Firebase', icon: '/assets/icons/firebase.svg' },
   { name: 'AWS Amplify', icon: '/assets/icons/aws-amplify.svg' },
   { name: 'MongoDB', icon: '/assets/icons/mongodb.svg' },
