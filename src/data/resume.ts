@@ -169,6 +169,7 @@ export const shippedApps: ShippedApp[] = [
     category: 'Photo & Video',
     description:
       'An AI camera platform that turns a smartphone into a real estate photography tool: a custom native camera module for lag-free zoom, a ProRAW pipeline for faster processing, virtual twilight rendering, and an asynchronous AWS media pipeline behind the scenes.',
+    caseStudySlug: 'ovvy',
   },
   {
     name: 'Puff Count: Quit Vaping Now',
@@ -187,6 +188,7 @@ export const shippedApps: ShippedApp[] = [
     category: 'Lifestyle',
     description:
       'An enthusiastic consent verification app built on ID-verified profiles, per-meeting QR pairing, and securely stored consent records.',
+    caseStudySlug: 'the-notme-app',
   },
 ];
 
