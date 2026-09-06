@@ -563,7 +563,7 @@ section:last-of-type { border-bottom: none; }
 
 .pro-footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: 32px;
   max-width: var(--max);
 }
