@@ -217,6 +217,14 @@ export const services: Service[] = [
     evidence:
       'Evidence: Fastlane automation at WeblineIndia, Ciright, Wve Labs · Firebase/Firestore/Crashlytics across every role',
   },
+  {
+    title: 'Mobile AI Integration',
+    tag: 'Google Gemini · OpenAI · Claude · On-device LLMs',
+    description:
+      'Wiring generative AI into mobile apps: cloud APIs from Google Gemini, OpenAI, and Anthropic Claude, plus custom on-device LLM inference for fully offline, privacy-first features, across iOS, Android, and Flutter.',
+    evidence:
+      'Evidence: Anthropic "Claude Code in Action" cert · production experience with Claude and MCP API workflows · Core ML and Vision framework in shipped iOS apps',
+  },
 ];
 
 export const education: EducationEntry[] = [
@@ -281,6 +289,7 @@ export interface TechItem {
 
 export const techStack: TechItem[] = [
   { name: 'Swift', icon: '/assets/icons/swift.svg', languageKey: 'Swift' },
+  { name: 'Android', icon: '/assets/icons/android.svg' },
   { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
   { name: 'Dart', icon: '/assets/icons/dart.svg', languageKey: 'Dart' },
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
