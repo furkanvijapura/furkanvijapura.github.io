@@ -14,8 +14,8 @@
   Solutions, WeblineIndia, Ciright Inc., and Wve Labs (current, Senior Mobile Developer, since
   July 2021).
 - Live App Store products from the Wve Labs era:
-  - The Daily Pour (formerly Bottle Raiders): an AI spirits review app for Dan Abrams' Mediaite.
-    https://apps.apple.com/us/app/the-daily-pour/id6502606142
+  - The Daily Pour (formerly Bottle Raiders): an AI spirits review app that scans bottle labels
+    and barcodes. https://apps.apple.com/us/app/the-daily-pour/id6502606142
   - Ovvy: Real Estate Camera, an AI real estate photography platform built by Wve Labs.
     https://apps.apple.com/us/app/ovvy-real-estate-camera/id6447063745
   - Puff Count: Quit Vaping Now, a vaping cessation app used by hundreds of thousands.

@@ -19,7 +19,6 @@ export interface ShippedApp {
   playStoreUrl?: string;
   icon: string;
   category: string;
-  developer: string;
   description: string;
 }
 
@@ -66,7 +65,7 @@ export const person = {
   lastUpdatedDisplay: '6 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
   heroLede:
-    "I'm a Senior Mobile Engineer based in India, with nine years shipping native iOS and cross-platform Flutter apps end to end, backend included. At Wve Labs I've shipped a spirits-scanning app for Dan Abrams' Mediaite, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
+    "I'm a Senior Mobile Engineer based in India, with nine years shipping native iOS and cross-platform Flutter apps end to end, backend included. At Wve Labs I've shipped a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
 };
 
 export const socials: SocialLink[] = [
@@ -95,7 +94,7 @@ export const experience: ExperienceEntry[] = [
     summary:
       'Full-time iOS and Flutter development across 24+ client apps for external clients, spanning consumer and enterprise work. This past year the role expanded into AI-assisted engineering: automated pull request review, custom hooks, and MCP-based tooling, culminating in an Anthropic Claude Code certification in March 2026.',
     highlights: [
-      "Shipped <strong>The Daily Pour</strong>, formerly Bottle Raiders: an AI-driven spirits review app for Dan Abrams' Mediaite that scans bottle labels and barcodes, covered by Forbes and Brewbound.",
+      "Shipped <strong>The Daily Pour</strong>, formerly Bottle Raiders: an AI-driven spirits review app that scans bottle labels and barcodes, covered by Forbes and Brewbound.",
       'Shipped <strong>Ovvy</strong>, an AI-powered real estate photography platform: engineered a custom native camera module for lag-free zoom and lens switching, plus a ProRAW processing pipeline that cut turnaround time by 30 percent.',
       'Shipped <strong>Puff Count: Quit Vaping Now</strong>, a vaping cessation app used by hundreds of thousands with daily, weekly, and monthly progress tracking.',
       'Shipped <strong>The NotME App</strong>, an identity-verified consent logging tool built for dating safety.',
@@ -157,16 +156,14 @@ export const shippedApps: ShippedApp[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.bottleraiders',
     icon: '/assets/apps/the-daily-pour.jpg',
     category: 'Food & Drink',
-    developer: 'Mediaite LLC',
     description:
-      'Formerly Bottle Raiders. An AI-powered spirits review app that scans bottle labels and barcodes to surface aggregated ratings, founded by Dan Abrams and covered by Forbes, Brewbound, and Mediaite.',
+      'Formerly Bottle Raiders. An AI-powered spirits review app that scans bottle labels and barcodes to surface aggregated ratings, covered by Forbes and Brewbound.',
   },
   {
     name: 'Ovvy: Real Estate Camera',
     url: 'https://apps.apple.com/us/app/ovvy-real-estate-camera/id6447063745',
     icon: '/assets/apps/ovvy.jpg',
     category: 'Photo & Video',
-    developer: 'Tyler Good · built by Wve Labs',
     description:
       'An AI camera platform that turns a smartphone into a real estate photography tool: a custom native camera module for lag-free zoom, a ProRAW pipeline for faster processing, virtual twilight rendering, and an asynchronous AWS media pipeline behind the scenes.',
   },
@@ -175,7 +172,6 @@ export const shippedApps: ShippedApp[] = [
     url: 'https://apps.apple.com/us/app/puff-count-quit-vaping-now/id1488580640',
     icon: '/assets/apps/puff-count.jpg',
     category: 'Lifestyle',
-    developer: 'Rodger Studio',
     description:
       'A puff-tracking app with custom quit plans, used by hundreds of thousands according to its own App Store listing, with daily, weekly, and monthly progress visualization and shared quit goals.',
   },
@@ -185,7 +181,6 @@ export const shippedApps: ShippedApp[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.thenotme.app',
     icon: '/assets/apps/notme.jpg',
     category: 'Lifestyle',
-    developer: 'Not Me LLC',
     description:
       'An enthusiastic consent verification app built on ID-verified profiles, per-meeting QR pairing, and securely stored consent records.',
   },
@@ -282,7 +277,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'What apps has Furkan shipped?',
     answer:
-      "Live App Store products from the Wve Labs era include The Daily Pour (formerly Bottle Raiders, an AI spirits review app for Dan Abrams' Mediaite), Ovvy (an AI real estate photography platform), Puff Count: Quit Vaping Now, and The NotME App. Earlier work includes Ciright's Enterprise Note and Ciright Works, and healthcare and lifestyle apps built at WeblineIndia.",
+      "Live App Store products from the Wve Labs era include The Daily Pour (formerly Bottle Raiders, an AI spirits review app), Ovvy (an AI real estate photography platform), Puff Count: Quit Vaping Now, and The NotME App. Earlier work includes Ciright's Enterprise Note and Ciright Works, and healthcare and lifestyle apps built at WeblineIndia.",
   },
   {
     question: 'Is he available for freelance or consulting work?',
