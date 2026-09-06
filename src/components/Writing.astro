@@ -1,0 +1,22 @@
+---
+---
+
+<section id="writing">
+  <div class="section-head">
+    <span class="section-index mono">07</span>
+    <h2>Writing</h2>
+  </div>
+  <p>Synced daily from Medium and DEV.to.</p>
+  <ul class="list-plain" id="writing-list">
+    <li><div class="list-sub">Loading…</div></li>
+  </ul>
+</section>
+
+<script>
+  import { renderWriting } from '../scripts/writing';
+
+  const list = document.getElementById('writing-list');
+  if (list) {
+    renderWriting(list);
+  }
+</script>

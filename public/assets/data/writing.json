@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-09-05T22:13:16.148Z",
+  "items": [
+    {
+      "title": "Most useful 10 shortcuts for Flutter in Visual Studio Code:",
+      "url": "https://dev.to/furkanvijapura/most-useful-10-shortcuts-for-flutter-in-visual-studio-code-5cjk",
+      "source": "DEV",
+      "publishedAt": "2023-04-09T08:56:02Z",
+      "description": "stless- Create a new stateless widget Ctrl + .- Quick Fix Ctrl + /- Comment out code Ctrl + Shift +..."
+    },
+    {
+      "title": "What is Future of mobile development platforms?",
+      "url": "https://dev.to/furkanvijapura/what-is-future-of-mobile-development-platforms-41e9",
+      "source": "DEV",
+      "publishedAt": "2023-02-13T16:55:34Z",
+      "description": "The future of mobile development platforms is constantly evolving, but there are several trends that..."
+    },
+    {
+      "title": "Dart and Swift",
+      "url": "https://dev.to/furkanvijapura/dart-and-swift-1d3e",
+      "source": "DEV",
+      "publishedAt": "2023-02-04T12:23:02Z",
+      "description": "Here are some similarities and differences between Dart and Swift:  Syntax: a. Dart has a more..."
+    },
+    {
+      "title": "UIColorPickerViewController in iOS 14",
+      "url": "https://medium.com/@furkan.vijapura/uicolorpickerviewcontroller-in-ios-14-cbe4fcd78fdc",
+      "source": "Medium",
+      "publishedAt": "2020-06-24T08:23:51.000Z",
+      "description": "With iOS 14 we can use the new UIColorPickerViewController to let user select color. In this post let's briefly check how to use it. You of course need the new Xcode 12 to be able to try this example."
+    },
+    {
+      "title": "Alert for Swift 4",
+      "url": "https://medium.com/@furkan.vijapura/alert-for-swift-4-9fbf0a3e817c",
+      "source": "Medium",
+      "publishedAt": "2018-01-18T12:47:28.000Z",
+      "description": "The handler was nil in the above examples. You can replace nil with a closure to do something when the user taps a button. For example:"
+    },
+    {
+      "title": "About iPhone X",
+      "url": "https://medium.com/@furkan.vijapura/about-iphone-x-f71314f738c1",
+      "source": "Medium",
+      "publishedAt": "2018-01-15T06:18:32.000Z",
+      "description": "Secure Authentication"
+    },
+    {
+      "title": "Designing Websites for iPhone X",
+      "url": "https://medium.com/@furkan.vijapura/designing-websites-for-iphone-x-fdcf05a8c96f",
+      "source": "Medium",
+      "publishedAt": "2017-12-05T09:00:36.000Z",
+      "description": "Out of the box, Safari displays your existing websites beautifully on the edge-to-edge display of the new iPhone X. Content is automatically inset within the display’s safe area so it is not obscur..."
+    }
+  ]
+}
