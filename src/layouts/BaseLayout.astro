@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { person, socials, faqs } from '../data/resume';
+import { person, socials, faqs, shippedApps } from '../data/resume';
 
 interface Props {
   title: string;
@@ -48,6 +48,18 @@ const faqJsonLd = {
     acceptedAnswer: { '@type': 'Answer', text: f.answer },
   })),
 };
+
+const appsJsonLd = shippedApps.map((app) => ({
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: app.name,
+  url: app.url,
+  applicationCategory: app.category,
+  operatingSystem: app.playStoreUrl ? 'iOS, Android' : 'iOS',
+  description: app.description,
+  author: { '@type': 'Person', name: person.name },
+  ...(app.playStoreUrl ? { sameAs: [app.playStoreUrl] } : {}),
+}));
 ---
 
 <!DOCTYPE html>
@@ -84,6 +96,9 @@ const faqJsonLd = {
 
   <script type="application/ld+json" is:inline set:html={JSON.stringify(personJsonLd)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+  {appsJsonLd.map((app) => (
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(app)} />
+  ))}
 </head>
 <body>
   <slot />
