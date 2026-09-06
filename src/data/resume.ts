@@ -53,7 +53,7 @@ export interface SocialLink {
 export const person = {
   name: 'Furkan Vijapura',
   role: 'Senior Mobile Engineer',
-  roleLine: 'iOS, Flutter, Serverless & AI',
+  roleLine: 'iOS Native & Flutter, Full-Stack Mobile',
   location: 'India',
   locationFull: 'India',
   timezone: 'GMT+5:30',
@@ -66,7 +66,7 @@ export const person = {
   lastUpdatedDisplay: '6 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
   heroLede:
-    "I'm a Senior Mobile Engineer based in India, with nine years shipping native iOS and cross-platform Flutter apps end to end, backend included. At Wve Labs I've shipped a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
+    "I'm a full-stack mobile engineer based in India, with nine years leading with native iOS and cross-platform Flutter development, backend and infrastructure included, not bolted on. At Wve Labs I've shipped a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
 };
 
 export const socials: SocialLink[] = [
@@ -200,7 +200,7 @@ export const services: Service[] = [
     tag: 'Flutter · Dart',
     description:
       'One codebase with a native feel on iOS and Android, proven across enterprise and consumer apps at three companies.',
-    evidence: 'Evidence: WeblineIndia, Ciright, Wve Labs, majority Dart/Flutter across client work · Udemy "Flutter & Dart" certification',
+    evidence: 'Evidence: WeblineIndia, Ciright, Wve Labs, majority Dart/Flutter across client work · early adoption of Apple\'s Liquid Glass design system in a production Flutter codebase · Udemy "Flutter & Dart" certification',
   },
   {
     title: 'AI & Agentic Tooling for Dev Workflows',
@@ -286,6 +286,10 @@ export const techStack: TechItem[] = [
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
   { name: 'Firebase', icon: '/assets/icons/firebase.svg' },
   { name: 'AWS Amplify', icon: '/assets/icons/aws-amplify.svg' },
+  { name: 'MongoDB', icon: '/assets/icons/mongodb.svg' },
+  { name: 'Socket.IO', icon: '/assets/icons/socket-io.svg' },
+  { name: 'RevenueCat', icon: '/assets/icons/revenuecat.svg' },
+  { name: 'Mapbox', icon: '/assets/icons/mapbox.svg' },
   { name: 'Fastlane', icon: '/assets/icons/fastlane.svg' },
   { name: 'GitHub Actions', icon: '/assets/icons/github-actions.svg' },
   { name: 'Astro', icon: '/assets/icons/astro.svg' },
@@ -297,7 +301,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'What does Furkan specialize in?',
     answer:
-      'Native iOS development with Swift and SwiftUI, cross-platform Flutter work, and serverless backends on Firebase and AWS, with a recent focus on bringing AI and agentic tooling such as Claude Code, MCP, and automated CI review into the mobile engineering workflow itself.',
+      'Full-stack mobile engineering: native iOS development with Swift and SwiftUI, cross-platform Flutter work, and the serverless backends on Firebase and AWS behind them, with a recent focus on bringing AI and agentic tooling such as Claude Code, MCP, and automated CI review into the mobile engineering workflow itself.',
   },
   {
     question: 'How much experience does he have?',
