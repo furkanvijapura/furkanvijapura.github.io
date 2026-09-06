@@ -37,6 +37,7 @@ export interface EducationEntry {
 export interface CertEntry {
   title: string;
   sub: string;
+  certificateUrl?: string;
 }
 
 export interface FaqEntry {
@@ -226,13 +227,42 @@ export const education: EducationEntry[] = [
 ];
 
 export const certifications: CertEntry[] = [
-  { title: 'Claude Code in Action', sub: 'Anthropic · Mar 2026' },
-  { title: 'SwiftUI', sub: 'Udemy · Jan 2025' },
-  { title: 'iOS App Store & In-App Purchases', sub: 'Coursera · Jun 2021' },
-  { title: 'Programming in Swift 5', sub: 'Coursera · Jun 2021' },
-  { title: 'Flutter & Dart', sub: 'Udemy · Nov 2020' },
-  { title: 'Swift and Xcode Development', sub: 'Udemy · Jan 2020' },
-  { title: 'Google Digital Unlocked', sub: 'Google' },
+  {
+    title: 'Claude Code in Action',
+    sub: 'Anthropic · Mar 2026',
+    certificateUrl: 'https://verify.skilljar.com/c/drdn6xrquvjv',
+  },
+  {
+    title: 'SwiftUI',
+    sub: 'Udemy · Jan 2025',
+    certificateUrl: 'https://www.udemy.com/certificate/UC-a972e8e8-6d37-4e20-a22b-dcb0df2c5d48/',
+  },
+  {
+    title: 'iOS App Store & In-App Purchases',
+    sub: 'Coursera · Jun 2021',
+    certificateUrl: 'https://coursera.org/share/8bd770c4c09a892f848415d131d49694',
+  },
+  {
+    title: 'Programming in Swift 5',
+    sub: 'Coursera · Jun 2021',
+    certificateUrl: 'https://coursera.org/share/eb1835900309c04097ab6c3e8e1361b0',
+  },
+  {
+    title: 'Flutter & Dart',
+    sub: 'Udemy · Nov 2020',
+    certificateUrl: 'https://www.udemy.com/certificate/UC-58a99672-a873-4d0d-b266-895cb5039bb6/',
+  },
+  {
+    title: 'Swift and Xcode Development',
+    sub: 'Udemy · Jan 2020',
+    certificateUrl: 'https://www.udemy.com/certificate/UC-0a068419-691e-43e9-8b9c-9b46d90a813d/',
+  },
+  {
+    title: 'Google Digital Unlocked',
+    sub: 'Google',
+    certificateUrl:
+      'https://drive.google.com/file/d/0BwOz3owcAb4WYnctd1pmRnZHc2M/view?usp=sharing&resourcekey=0-79iJnemvBjQ93CJ6JqxhPA',
+  },
   { title: 'IICT Certification', sub: 'International Institute for Consulting and Training' },
 ];
 

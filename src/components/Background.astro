@@ -26,7 +26,15 @@ import { education, certifications, skills } from '../data/resume';
         {certifications.map((c) => (
           <li>
             <div class="list-title">{c.title}</div>
-            <div class="list-sub">{c.sub}</div>
+            <div class="list-sub">
+              {c.sub}
+              {c.certificateUrl && (
+                <>
+                  {' · '}
+                  <a href={c.certificateUrl} target="_blank" rel="noopener noreferrer">View certificate</a>
+                </>
+              )}
+            </div>
           </li>
         ))}
       </ul>
