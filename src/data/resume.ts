@@ -54,8 +54,8 @@ export const person = {
   name: 'Furkan Vijapura',
   role: 'Senior Mobile Engineer',
   roleLine: 'iOS, Flutter, Serverless & AI',
-  location: 'Ahmedabad, IN',
-  locationFull: 'Ahmedabad, Gujarat, India',
+  location: 'India',
+  locationFull: 'India',
   timezone: 'GMT+5:30',
   email: 'furkanvijapura@gmail.com',
   phone: '+91 9727 664094',
@@ -66,7 +66,7 @@ export const person = {
   lastUpdatedDisplay: '6 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
   heroLede:
-    "I'm a Senior Mobile Engineer based in Ahmedabad, India, with nine years shipping native iOS and cross-platform Flutter apps end to end, backend included. At Wve Labs I've shipped a spirits-scanning app for Dan Abrams' Mediaite, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
+    "I'm a Senior Mobile Engineer based in India, with nine years shipping native iOS and cross-platform Flutter apps end to end, backend included. At Wve Labs I've shipped a spirits-scanning app for Dan Abrams' Mediaite, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
 };
 
 export const socials: SocialLink[] = [
@@ -91,7 +91,7 @@ export const experience: ExperienceEntry[] = [
     current: true,
     role: 'Senior Mobile Developer',
     org: 'Wve Labs',
-    dates: 'Jul 2021 – Present · 5 yrs 3 mos · Ahmedabad, IN · On-site',
+    dates: 'Jul 2021 – Present · 5 yrs 3 mos · India · Hybrid',
     summary:
       'Full-time iOS and Flutter development across 24+ client apps for external clients, spanning consumer and enterprise work. This past year the role expanded into AI-assisted engineering: automated pull request review, custom hooks, and MCP-based tooling, culminating in an Anthropic Claude Code certification in March 2026.',
     highlights: [
@@ -106,7 +106,7 @@ export const experience: ExperienceEntry[] = [
     current: false,
     role: 'iOS & Flutter Developer',
     org: 'Ciright, Inc.',
-    dates: 'May 2020 – Jun 2021 · 1 yr 2 mos · Ahmedabad, IN · Hybrid',
+    dates: 'May 2020 – Jun 2021 · 1 yr 2 mos · India · Hybrid',
     summary:
       'An enterprise productivity suite carried from prototype through App Store release, built on Firebase, Firestore, and Crashlytics.',
     highlights: [
@@ -120,7 +120,7 @@ export const experience: ExperienceEntry[] = [
     current: false,
     role: 'iOS & Flutter Developer',
     org: 'WeblineIndia',
-    dates: 'Sep 2019 – May 2020 · 9 mos · Ahmedabad, IN · On-site',
+    dates: 'Sep 2019 – May 2020 · 9 mos · India · On-site',
     summary: 'Client apps across health, travel, and lifestyle categories.',
     highlights: [
       'Built <strong>Patient-Tracker Plus</strong>, an iPad app clinicians use to log patient vitals and medication history.',
@@ -133,7 +133,7 @@ export const experience: ExperienceEntry[] = [
     current: false,
     role: 'Jr. iOS Developer',
     org: 'Discus Business Solutions',
-    dates: 'Jul 2017 – Sep 2019 · 2 yrs 3 mos · Ahmedabad, IN · On-site',
+    dates: 'Jul 2017 – Sep 2019 · 2 yrs 3 mos · India · On-site',
     summary: 'First professional role: sales and document management tooling for enterprise clients.',
     highlights: [
       'Built <strong>Odin Live Plus</strong>, a downstream supply chain app combining CRM, sales force automation, and inventory tracking.',
@@ -145,7 +145,7 @@ export const experience: ExperienceEntry[] = [
     current: false,
     role: 'iOS Developer (Training)',
     org: 'AGILE Infoways Pvt. Ltd',
-    dates: 'Jan 2017 – Jun 2017 · 6 mos · Ahmedabad, IN',
+    dates: 'Jan 2017 – Jun 2017 · 6 mos · India',
     summary: 'Entry into professional iOS development.',
   },
 ];
@@ -204,7 +204,7 @@ export const services: Service[] = [
     tag: 'Flutter · Dart',
     description:
       'One codebase with a native feel on iOS and Android, proven across enterprise and consumer apps at three companies.',
-    evidence: 'Evidence: WeblineIndia, Ciright, Wve Labs · Udemy "Flutter & Dart" certification',
+    evidence: 'Evidence: WeblineIndia, Ciright, Wve Labs, majority Dart/Flutter across client work · Udemy "Flutter & Dart" certification',
   },
   {
     title: 'AI & Agentic Tooling for Dev Workflows',
@@ -277,7 +277,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'How much experience does he have?',
     answer:
-      'Over nine years of professional mobile development since January 2017 across five companies in Ahmedabad, India, currently Senior Mobile Developer at Wve Labs since July 2021, where he has worked across 24+ client apps.',
+      'Over nine years of professional mobile development since January 2017 across five companies in India, currently Senior Mobile Developer at Wve Labs since July 2021, where he has worked across 24+ client apps.',
   },
   {
     question: 'What apps has Furkan shipped?',
