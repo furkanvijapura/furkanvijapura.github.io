@@ -20,6 +20,7 @@ export interface ShippedApp {
   icon: string;
   category: string;
   description: string;
+  caseStudySlug?: string;
 }
 
 export interface Service {
@@ -66,7 +67,7 @@ export const person = {
   lastUpdatedDisplay: '6 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
   heroLede:
-    "I'm a full-stack mobile engineer based in India, with nine years leading with native iOS and cross-platform Flutter development, backend and infrastructure included, not bolted on. At Wve Labs I've shipped a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
+    "I'm a full-stack mobile engineer based in India — the kind of person you can hand a rough idea to and get back a real product. Nine years leading with native iOS and cross-platform Flutter development, architecture through App Store release, backend and infrastructure included, not bolted on. At Wve Labs I've taken a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands from prototype to live listings, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
 };
 
 export const socials: SocialLink[] = [
@@ -159,6 +160,7 @@ export const shippedApps: ShippedApp[] = [
     category: 'Food & Drink',
     description:
       'Formerly Bottle Raiders. An AI-powered spirits review app that scans bottle labels and barcodes to surface aggregated ratings, covered by Forbes and Brewbound.',
+    caseStudySlug: 'the-daily-pour',
   },
   {
     name: 'Ovvy: Real Estate Camera',
@@ -175,6 +177,7 @@ export const shippedApps: ShippedApp[] = [
     category: 'Lifestyle',
     description:
       'A puff-tracking app with custom quit plans, used by hundreds of thousands according to its own App Store listing, with daily, weekly, and monthly progress visualization and shared quit goals.',
+    caseStudySlug: 'puff-count',
   },
   {
     name: 'The NotME App',

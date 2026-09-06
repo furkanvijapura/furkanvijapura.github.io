@@ -1,0 +1,86 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Rail from '../../components/Rail.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('caseStudies');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { app, category, role, constraints, stack, storeUrl, playStoreUrl, sourceNote } = entry.data;
+const { Content } = await render(entry);
+
+const title = `${app} — Case Study · Furkan Vijapura`;
+const description = `How ${app} was built: the problem, the architecture decisions, and the outcome.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="shell">
+    <Rail />
+    <main>
+      <div class="doc">
+        <article class="case-study">
+          <a class="back-link" href="/#shipped">&larr; Back to shipped apps</a>
+          <div class="cs-header">
+            <span class="cs-category mono">{category}</span>
+            <h1>{app}</h1>
+            <p class="cs-role">{role}</p>
+          </div>
+
+          <div class="cs-meta-grid">
+            <div>
+              <h3 class="mono">Constraints</h3>
+              <ul>
+                {constraints.map((c: string) => <li>{c}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h3 class="mono">Stack</h3>
+              <div class="chip-row">
+                {stack.map((s: string) => <span class="chip">{s}</span>)}
+              </div>
+              <div class="cs-links">
+                <a href={storeUrl} target="_blank" rel="noopener">App Store <span class="mono">&rarr;</span></a>
+                {playStoreUrl && <a href={playStoreUrl} target="_blank" rel="noopener">Google Play <span class="mono">&rarr;</span></a>}
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-body">
+            <Content />
+          </div>
+
+          <p class="cs-source">{sourceNote}</p>
+        </article>
+      </div>
+    </main>
+  </div>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .case-study { max-width: 68ch; margin: 0 auto; padding: 48px 0 80px; }
+  .back-link { font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-dim); text-decoration: none; }
+  .back-link:hover { color: var(--text); }
+  .cs-header { margin: 24px 0 32px; }
+  .cs-category { color: var(--accent); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .cs-header h1 { font-family: var(--font-display); font-size: 2rem; margin: 8px 0 6px; }
+  .cs-role { color: var(--text-dim); font-size: 0.95rem; }
+  .cs-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+  .cs-meta-grid h3 { font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 10px; }
+  .cs-meta-grid ul { margin: 0; padding-left: 18px; font-size: 0.88rem; }
+  .cs-meta-grid li { margin-bottom: 8px; color: var(--text-dim); }
+  .cs-links { margin-top: 14px; display: flex; gap: 16px; }
+  .cs-body :global(h2) { font-family: var(--font-display); font-size: 1.2rem; margin: 32px 0 12px; }
+  .cs-body :global(p) { line-height: 1.7; margin-bottom: 14px; }
+  .cs-source { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--text-faint); }
+  @media (max-width: 640px) {
+    .cs-meta-grid { grid-template-columns: 1fr; }
+  }
+</style>

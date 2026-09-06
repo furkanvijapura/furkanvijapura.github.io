@@ -406,6 +406,9 @@ section:last-of-type { border-bottom: none; }
 
 .app-links a:hover { color: var(--accent); border-color: var(--accent); }
 
+.app-links a.case-study-link { color: var(--accent-2); }
+.app-links a.case-study-link:hover { color: var(--accent-2); border-color: var(--accent-2); }
+
 /* ------------------------------ services ------------------------------ */
 
 .services-list { display: flex; flex-direction: column; gap: 0; }

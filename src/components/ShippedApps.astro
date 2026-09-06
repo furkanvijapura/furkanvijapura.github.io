@@ -26,6 +26,9 @@ import { shippedApps } from '../data/resume';
             {app.playStoreUrl && (
               <a href={app.playStoreUrl} target="_blank" rel="noopener">Google Play <span class="mono">→</span></a>
             )}
+            {app.caseStudySlug && (
+              <a href={`/work/${app.caseStudySlug}`} class="case-study-link">Case study <span class="mono">→</span></a>
+            )}
           </div>
         </div>
       </div>
