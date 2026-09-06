@@ -2,6 +2,9 @@
 dist/
 .astro/
 
+# generated at build time from src/data/resume.ts, never hand-edited
+public/furkan-vijapura-resume.pdf
+
 # dependencies
 node_modules/
 
