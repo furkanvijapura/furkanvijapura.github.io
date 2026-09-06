@@ -1,4 +1,25 @@
 ---
+import { readFileSync } from 'node:fs';
+
+interface WritingItem {
+  title: string;
+  url: string;
+  source: 'DEV' | 'Medium';
+  publishedAt: string;
+  description: string | null;
+}
+interface WritingPayload {
+  generatedAt: string;
+  items: WritingItem[];
+}
+
+const writing: WritingPayload = JSON.parse(
+  readFileSync(new URL('../../public/assets/data/writing.json', import.meta.url), 'utf-8')
+);
+
+function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
 ---
 
 <section id="writing">
@@ -8,15 +29,13 @@
   </div>
   <p>Synced daily from Medium and DEV.to.</p>
   <ul class="list-plain" id="writing-list">
-    <li><div class="list-sub">Loading…</div></li>
+    {writing.items.length === 0 && <li><div class="list-sub">Nothing published recently.</div></li>}
+    {writing.items.map((item) => (
+      <li>
+        <a class="list-title" href={item.url} target="_blank" rel="noopener" style="text-decoration:none;">{item.title}</a>
+        {item.description && <p style="margin:4px 0 0;font-size:0.88rem;">{item.description}</p>}
+        <div class="list-sub">{item.source} · {formatDate(item.publishedAt)}</div>
+      </li>
+    ))}
   </ul>
 </section>
-
-<script>
-  import { renderWriting } from '../scripts/writing';
-
-  const list = document.getElementById('writing-list');
-  if (list) {
-    renderWriting(list);
-  }
-</script>

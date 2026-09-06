@@ -1,4 +1,44 @@
 ---
+import { readFileSync } from 'node:fs';
+
+interface ActivityItem {
+  name: string;
+  url: string;
+  description: string | null;
+  language: string | null;
+  pushedAt: string | null;
+}
+interface ActivityPayload {
+  generatedAt: string;
+  items: ActivityItem[];
+}
+interface LanguageStat {
+  name: string;
+  bytes: number;
+}
+interface SkillsPayload {
+  generatedAt: string;
+  topLanguages: LanguageStat[];
+}
+
+const activity: ActivityPayload = JSON.parse(
+  readFileSync(new URL('../../public/assets/data/activity.json', import.meta.url), 'utf-8')
+);
+const skills: SkillsPayload = JSON.parse(
+  readFileSync(new URL('../../public/assets/data/skills.json', import.meta.url), 'utf-8')
+);
+
+const topLanguages = skills.topLanguages.slice(0, 6);
+const totalBytes = topLanguages.reduce((sum, l) => sum + l.bytes, 0) || 1;
+const languageMix = topLanguages.map((l) => ({
+  name: l.name,
+  pct: Math.round((l.bytes / totalBytes) * 100),
+}));
+
+function formatDate(iso: string | null): string {
+  if (!iso) return '';
+  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
 ---
 
 <section id="activity">
@@ -6,27 +46,21 @@
     <span class="section-index mono">06</span>
     <h2>Recent activity</h2>
   </div>
-  <p>Pulled live from the GitHub API once a day, not hand-maintained.</p>
+  <p>Pulled from the GitHub API once a day, not hand-maintained.</p>
   <ul class="list-plain" id="activity-list">
-    <li><div class="list-sub">Loading…</div></li>
+    {activity.items.length === 0 && <li><div class="list-sub">No recent public activity.</div></li>}
+    {activity.items.map((item) => (
+      <li>
+        <a class="list-title" href={item.url} target="_blank" rel="noopener" style="text-decoration:none;">{item.name}</a>
+        {item.description && <p style="margin:4px 0 0;font-size:0.88rem;">{item.description}</p>}
+        <div class="list-sub">{[item.language, formatDate(item.pushedAt)].filter(Boolean).join(' · ')}</div>
+      </li>
+    ))}
   </ul>
 
   <h3 style="font-size:1rem;color:var(--text);margin:28px 0 4px;">Language mix</h3>
   <p style="margin-bottom:0;">Aggregated monthly across both of Furkan's GitHub accounts.</p>
-  <div class="chip-row" id="language-mix"></div>
+  <div class="chip-row">
+    {languageMix.map((l) => <span class="chip">{l.name} · {l.pct}%</span>)}
+  </div>
 </section>
-
-<script>
-  import { renderActivity } from '../scripts/activity';
-  import { renderLanguageMix } from '../scripts/skills';
-
-  const list = document.getElementById('activity-list');
-  if (list) {
-    renderActivity(list);
-  }
-
-  const mix = document.getElementById('language-mix');
-  if (mix) {
-    renderLanguageMix(mix);
-  }
-</script>
