@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 interface WritingItem {
   title: string;
@@ -13,8 +14,11 @@ interface WritingPayload {
   items: WritingItem[];
 }
 
+// Resolved from the project root (process.cwd()), not import.meta.url: the
+// bundler's chunk output location is an implementation detail that has
+// changed between Astro major versions, but the project root is stable.
 const writing: WritingPayload = JSON.parse(
-  readFileSync(new URL('../../public/assets/data/writing.json', import.meta.url), 'utf-8')
+  readFileSync(join(process.cwd(), 'public/assets/data/writing.json'), 'utf-8')
 );
 
 function formatDate(iso: string): string {

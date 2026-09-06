@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 interface ActivityItem {
   name: string;
@@ -21,11 +22,14 @@ interface SkillsPayload {
   topLanguages: LanguageStat[];
 }
 
+// Resolved from the project root (process.cwd()), not import.meta.url: the
+// bundler's chunk output location is an implementation detail that has
+// changed between Astro major versions, but the project root is stable.
 const activity: ActivityPayload = JSON.parse(
-  readFileSync(new URL('../../public/assets/data/activity.json', import.meta.url), 'utf-8')
+  readFileSync(join(process.cwd(), 'public/assets/data/activity.json'), 'utf-8')
 );
 const skills: SkillsPayload = JSON.parse(
-  readFileSync(new URL('../../public/assets/data/skills.json', import.meta.url), 'utf-8')
+  readFileSync(join(process.cwd(), 'public/assets/data/skills.json'), 'utf-8')
 );
 
 const topLanguages = skills.topLanguages.slice(0, 6);
