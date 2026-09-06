@@ -289,8 +289,8 @@ export interface TechItem {
 
 export const techStack: TechItem[] = [
   { name: 'Swift', icon: '/assets/icons/swift.svg', languageKey: 'Swift' },
-  { name: 'Android', icon: '/assets/icons/android.svg' },
   { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
+  { name: 'Android', icon: '/assets/icons/android.svg' },
   { name: 'Dart', icon: '/assets/icons/dart.svg', languageKey: 'Dart' },
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
   { name: 'Node.js', icon: '/assets/icons/node-js.svg' },
