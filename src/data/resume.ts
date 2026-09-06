@@ -283,15 +283,13 @@ export const skills: string[] = [
 export interface TechItem {
   name: string;
   icon: string;
-  /** Matches a language name in the auto-synced skills.json, to show a live usage badge. */
-  languageKey?: string;
 }
 
 export const techStack: TechItem[] = [
-  { name: 'Swift', icon: '/assets/icons/swift.svg', languageKey: 'Swift' },
+  { name: 'Swift', icon: '/assets/icons/swift.svg' },
   { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
   { name: 'Android', icon: '/assets/icons/android.svg' },
-  { name: 'Dart', icon: '/assets/icons/dart.svg', languageKey: 'Dart' },
+  { name: 'Dart', icon: '/assets/icons/dart.svg' },
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
   { name: 'Node.js', icon: '/assets/icons/node-js.svg' },
 ];

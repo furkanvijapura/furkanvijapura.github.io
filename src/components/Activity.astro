@@ -32,12 +32,7 @@ const skills: SkillsPayload = JSON.parse(
   readFileSync(join(process.cwd(), 'public/assets/data/skills.json'), 'utf-8')
 );
 
-const topLanguages = skills.topLanguages.slice(0, 6);
-const totalBytes = topLanguages.reduce((sum, l) => sum + l.bytes, 0) || 1;
-const languageMix = topLanguages.map((l) => ({
-  name: l.name,
-  pct: Math.round((l.bytes / totalBytes) * 100),
-}));
+const languageMix = skills.topLanguages.slice(0, 6);
 
 function formatDate(iso: string | null): string {
   if (!iso) return '';
@@ -65,6 +60,6 @@ function formatDate(iso: string | null): string {
   <h3 style="font-size:1rem;color:var(--text);margin:28px 0 4px;">Language mix</h3>
   <p style="margin-bottom:0;">Aggregated monthly across both of Furkan's GitHub accounts.</p>
   <div class="chip-row">
-    {languageMix.map((l) => <span class="chip">{l.name} · {l.pct}%</span>)}
+    {languageMix.map((l) => <span class="chip">{l.name}</span>)}
   </div>
 </section>

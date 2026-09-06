@@ -1,25 +1,5 @@
 ---
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
 import { techStack, integrations } from '../data/resume';
-
-interface LanguageStat {
-  name: string;
-  bytes: number;
-}
-interface SkillsPayload {
-  generatedAt: string;
-  topLanguages: LanguageStat[];
-}
-
-// Resolved from the project root (process.cwd()), not import.meta.url: the
-// bundler's chunk output location is an implementation detail that has
-// changed between Astro major versions, but the project root is stable.
-const skills: SkillsPayload = JSON.parse(
-  readFileSync(join(process.cwd(), 'public/assets/data/skills.json'), 'utf-8')
-);
-const totalBytes = skills.topLanguages.reduce((sum, l) => sum + l.bytes, 0) || 1;
-const bytesByLanguage = new Map(skills.topLanguages.map((l) => [l.name, l.bytes]));
 ---
 
 <section id="stack">
@@ -31,17 +11,12 @@ const bytesByLanguage = new Map(skills.topLanguages.map((l) => [l.name, l.bytes]
 
   <h3 style="font-size:1rem;color:var(--text);margin-bottom:10px;">Languages &amp; platforms</h3>
   <div class="tech-grid">
-    {techStack.map((t) => {
-      const bytes = t.languageKey ? bytesByLanguage.get(t.languageKey) : undefined;
-      const pct = bytes != null ? Math.round((bytes / totalBytes) * 100) : null;
-      return (
-        <div class:list={['tech-tile', { synced: pct != null }]}>
-          <img src={t.icon} alt="" width="28" height="28" />
-          <span class="tech-name">{t.name}</span>
-          {pct != null && <span class="tech-badge">{pct}%</span>}
-        </div>
-      );
-    })}
+    {techStack.map((t) => (
+      <div class="tech-tile">
+        <img src={t.icon} alt="" width="28" height="28" />
+        <span class="tech-name">{t.name}</span>
+      </div>
+    ))}
   </div>
 
   <h3 style="font-size:1rem;color:var(--text);margin:28px 0 10px;">Integrations &amp; tooling</h3>
