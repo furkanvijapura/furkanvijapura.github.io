@@ -93,7 +93,7 @@ export const experience: ExperienceEntry[] = [
     org: 'Wve Labs',
     dates: 'Jul 2021 – Present · 5 yrs 3 mos · Ahmedabad, IN · On-site',
     summary:
-      'Full-time iOS and Flutter development for external clients across consumer and enterprise apps. This past year the role expanded into AI-assisted engineering: automated pull request review, custom hooks, and MCP-based tooling, culminating in an Anthropic Claude Code certification in March 2026.',
+      'Full-time iOS and Flutter development across 24+ client apps for external clients, spanning consumer and enterprise work. This past year the role expanded into AI-assisted engineering: automated pull request review, custom hooks, and MCP-based tooling, culminating in an Anthropic Claude Code certification in March 2026.',
     highlights: [
       "Shipped <strong>The Daily Pour</strong>, formerly Bottle Raiders: an AI-driven spirits review app for Dan Abrams' Mediaite that scans bottle labels and barcodes, covered by Forbes and Brewbound.",
       'Shipped <strong>Ovvy</strong>, an AI-powered real estate photography platform: engineered a custom native camera module for lag-free zoom and lens switching, plus a ProRAW processing pipeline that cut turnaround time by 30 percent.',
@@ -277,7 +277,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'How much experience does he have?',
     answer:
-      'Over nine years of professional mobile development since January 2017 across five companies in Ahmedabad, India, currently Senior Mobile Developer at Wve Labs since July 2021.',
+      'Over nine years of professional mobile development since January 2017 across five companies in Ahmedabad, India, currently Senior Mobile Developer at Wve Labs since July 2021, where he has worked across 24+ client apps.',
   },
   {
     question: 'What apps has Furkan shipped?',
