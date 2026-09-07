@@ -7,21 +7,21 @@ constraints:
   - "Scale: past 10,000+ active users, Firebase read/data-transfer costs grew large enough to threaten the app's unit economics"
 stack: ["Swift", "Firebase", "Figma"]
 storeUrl: "https://apps.apple.com/us/app/puff-count-quit-vaping-now/id1488580640"
-sourceNote: "Problem, architecture, and outcome details below are drawn from Wve Labs' own public case study for this project (wvelabs.com/case-study/puffcount-lifestyle-app), not independently re-verified beyond what's stated there."
+sourceNote: "This account is built from Wve Labs' public case study for the project (wvelabs.com/case-study/puffcount-lifestyle-app). It reflects what the agency documented there, not independent verification beyond it."
 ---
 
 Puff Count: Quit Vaping Now is a vaping-cessation app with custom quit plans and daily, weekly, and monthly progress tracking.
 
 ## The problem
 
-Two problems showed up at different points in the app's life. Early on, the progress charts needed to show two related series at once — a "dual graph" — which existing charting libraries didn't render cleanly without custom work. Later, once the app had grown past 10,000 active users, Firebase's per-read data-transfer costs started to matter: the same client-side patterns that were fine at low volume weren't sustainable at scale.
+Two problems surfaced at different points in the app's life. Early on, the progress charts needed to plot two related data series together, and off-the-shelf charting libraries didn't support that combination cleanly. Later, once the app had grown past 10,000 active users, Firebase's per-read costs started eating into the app's economics — the kind of problem that only shows up once there's real scale to deal with.
 
 ## Architecture decisions
 
-The dual-graph problem was solved by overlaying two separate graphs at adjusted opacities rather than fighting a single library's multi-series API — a simpler fix than it sounds, and one that avoided taking on a heavier charting dependency.
+The chart problem had a simple fix: two separate graphs, layered at adjusted opacities, stood in for a proper multi-series chart, without pulling in a heavier library to get there.
 
-The cost problem was solved on the client, not by switching providers: reworking how and how often data was fetched and displayed cut Firebase's data-transfer costs by over 90%, without changing the backend itself. That's a meaningfully different fix than "add caching" — it's closer to rethinking what the client actually needed to ask for.
+The cost problem was fixed on the client. Changing how often and how much data got fetched and displayed cut Firebase's data-transfer costs by more than 90%, without touching the backend at all. It's a smaller, cheaper change than a caching layer, and it came from asking what the client actually needed to request in the first place.
 
 ## Outcome
 
-The app passed 30,000 downloads in its first month, reached #1 in its App Store category for quit-vaping apps, and scaled past 10,000 active users before the Firebase cost work above became necessary — a sequence that's itself a reasonable proxy for real, sustained usage rather than a launch-week spike.
+The app hit 30,000 downloads in its first month and reached #1 in its App Store category for quit-vaping apps. It had already scaled past 10,000 active users by the time the Firebase optimization became necessary, which points to sustained use rather than a launch-week spike.

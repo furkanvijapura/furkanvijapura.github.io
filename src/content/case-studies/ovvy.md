@@ -8,21 +8,21 @@ constraints:
   - "Capture has to feel instant even though the heavy processing (RAW enhancement, virtual staging, twilight effects) can't run in real time on-device"
 stack: ["Swift", "AWS", "ProRAW pipeline"]
 storeUrl: "https://apps.apple.com/us/app/ovvy-real-estate-camera/id6447063745"
-sourceNote: "There's no dedicated wvelabs.com case study for this project. The details below come from the app's own App Store listing and the technical specifics already documented from Furkan's work history — nothing here is invented beyond what's independently checkable."
+sourceNote: "Wve Labs hasn't published a case study for this one. What's here comes from Ovvy's own App Store listing plus the technical details already documented on this site, nothing added beyond what's checkable."
 ---
 
-Ovvy turns an iPhone into a real estate listing-photo workflow: walk the property, tap to shoot, and get back listing-ready photos, a shareable property page, and auto-filled listing copy — usually within hours.
+Ovvy turns an iPhone into a real estate listing-photo workflow. Walk the property, tap to shoot, and get back listing-ready photos, a shareable property page, and pre-written listing copy, usually within hours.
 
 ## The problem
 
-The person holding the phone usually isn't a professional photographer. So the camera itself has to do the parts a photographer would normally handle — exposure, leveling, composition — automatically, in real time, without the user thinking about it. At the same time, real estate listings are time-sensitive: the longer a property sits without proper photos, the more momentum it loses, so the gap between "shot on a Tuesday afternoon" and "live on the listing" had to be measured in hours, not days.
+Most people holding the phone aren't photographers. The camera had to take over the parts a photographer would normally handle — exposure, leveling, composition — automatically. Speed mattered just as much: a listing loses momentum the longer it sits without real photos, so the gap between a Tuesday afternoon shoot and a live listing had to shrink to hours.
 
 ## Architecture decisions
 
-Capture and processing were deliberately split. A custom native camera module handles zoom and lens switching with no perceptible lag, because a photographer walking a property can't wait on the UI to catch up. Everything heavier — RAW-quality enhancement, virtual staging, virtual twilight effects — runs asynchronously through an AWS-backed processing pipeline instead of on-device in real time, so the app stays responsive in the field while the actual image work happens where it has room to be slow and careful.
+Capture and processing run on different clocks. A custom native camera module keeps zoom and lens switching lag-free, because someone walking a property can't wait on the interface to catch up. Everything slower happens later: RAW enhancement, virtual staging, and virtual twilight effects all run asynchronously through an AWS pipeline once the agent has moved on to the next room.
 
-The output isn't just edited photos: the same pipeline also produces a shareable property website and auto-filled listing description and property data, so a photo shoot turns directly into a publishable listing asset instead of a folder of images someone still has to assemble.
+That same pipeline does more than edit photos. It also generates a shareable property website and fills in listing descriptions and property data, turning a photo shoot straight into something publishable.
 
 ## Outcome
 
-The ProRAW processing pipeline and native camera work cut photo turnaround time by 30%. The app is live on the App Store, with editing delivered within hours per its own listing.
+The native camera work and the ProRAW pipeline cut turnaround time by 30%. The app is live on the App Store, with editing typically delivered within hours.

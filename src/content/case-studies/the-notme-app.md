@@ -9,19 +9,19 @@ constraints:
 stack: ["Swift", "Flutter"]
 storeUrl: "https://apps.apple.com/us/app/the-notme-app/id6745784550"
 playStoreUrl: "https://play.google.com/store/apps/details?id=com.thenotme.app"
-sourceNote: "There's no dedicated wvelabs.com case study for this project. The details below come from the app's own App Store listing and the site's existing documented feature set — nothing here is invented beyond what's independently checkable."
+sourceNote: "No public case study exists for this project either. The details below are pulled from the app's App Store listing and the feature set already documented on this site, not from any internal or agency source."
 ---
 
-The NotME App is a consent-verification tool for people who already know each other: each person privately sets what they're open to, and the app reveals only what both sides agree on.
+The NotME App is a consent-verification tool for people who already know each other. Each person privately sets what they're open to, and the app only shows what both sides agree on.
 
 ## The problem
 
-Consent conversations are awkward precisely because directness carries risk — asking outright means risking an uncomfortable rejection. The app needed a way to let two people express interest privately, so a mismatch never has to be seen by either side, while still producing something real and specific once there's a match, not just a vague green light. And because the subject is physical safety, not just preference-matching, whatever gets built has to hold up in the moment something goes wrong, not just at signup.
+Asking someone directly about consent carries real social risk, since a mismatch means an awkward rejection. The app needed a way for two people to express interest without either one having to see a no. It also had to hold up mid-encounter, since the whole point is physical safety, and a safety feature that only works in theory doesn't count for much in practice.
 
 ## Architecture decisions
 
-Preferences are set privately per person and only compared once both sides have opted into a "Rendezvous" — the app reveals overlap, never a one-sided rejection, the same privacy shape that makes mutual-match systems work elsewhere. A universal safe word ("SEESAW") is built in as an always-available control rather than a menu item, since a safety feature that requires hunting through settings isn't a safety feature. Identity is verified with an age-checkmark and QR-code pairing at the point of an actual in-person meeting, so a consent record is attached to a real verified person rather than a handle, and those records are retained securely for 12 months.
+Preferences stay private until both sides opt into a shared "Rendezvous," at which point the app reveals the overlap and nothing else — the same trick mutual-match systems use elsewhere to keep rejections invisible. A safe word, "SEESAW," sits one tap away at all times instead of buried in settings, because a safety control has to be reachable in the moment it's needed, not three menus deep. Identity gets checked too: an age-verification mark plus a QR pairing at the actual meeting ties a consent record to a real person, not a username, and that record is kept securely for 12 months.
 
 ## Outcome
 
-The app is live on both the App Store and Google Play, built around a specific, safety-forward niche — structured, revocable, identity-backed consent — that's uncommon in the broader dating-app category.
+The app is live on the App Store and Google Play. It occupies a narrow, safety-focused niche — structured, revocable, identity-backed consent — that most dating apps don't touch.

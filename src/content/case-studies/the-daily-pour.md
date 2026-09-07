@@ -9,23 +9,23 @@ constraints:
 stack: ["Flutter", "Vue.js", "Node.js", "MongoDB", "AWS", "Figma"]
 storeUrl: "https://apps.apple.com/us/app/the-daily-pour/id6502606142"
 playStoreUrl: "https://play.google.com/store/apps/details?id=com.bottleraiders"
-sourceNote: "Problem, architecture, and outcome details below are drawn from Wve Labs' own public case study for this project (wvelabs.com/case-study/the-daily-pour), not independently re-verified beyond what's stated there."
+sourceNote: "The problem, decisions, and outcome below come straight from Wve Labs' own published case study for this project (wvelabs.com/case-study/the-daily-pour). Treat them as the agency's account, not something re-verified beyond that page."
 ---
 
 The Daily Pour (formerly Bottle Raiders) is an AI-powered spirits review app that scans bottle labels and barcodes to surface aggregated ratings from expert and user reviews.
 
 ## The problem
 
-Two separate technical challenges shaped the build. First, real bottles are inconsistent: many lack a clean, scannable label, and shapes vary enough that naive image matching wasn't reliable. Second, the product ran on two systems of record — a WordPress backend and a Node.js/MongoDB backend — that both needed to reflect the same data, including in near-real time.
+Two separate challenges shaped the build. Real bottles are messy: labels are often worn, missing, or oddly shaped, which made naive image matching unreliable on its own. The second challenge was structural. The product ran on two backends at once, a WordPress system and a Node.js/MongoDB system, and both had to agree on the same data quickly.
 
 ## Architecture decisions
 
-Rather than a dual-write pattern (writing to both databases from the client), the sync problem was solved with a REST API layer: changes on the WordPress side get sent to Node.js, which cross-checks MongoDB and applies whatever updates are needed. That keeps one system as the source of truth for a given write, instead of two systems racing to agree.
+WordPress writes get pushed through a REST API to Node.js, which checks MongoDB and applies whatever updates are needed. One system stays the source of truth for a given change, so the two databases don't end up racing each other.
 
-For the scanning problem, the app pairs barcode recognition with label-based AI matching, so a bottle can still be identified even when the barcode alone isn't enough context.
+For scanning, barcode recognition works alongside label-based AI matching. If a barcode alone isn't enough to identify a bottle, the label picks up the slack.
 
-Guest access was handled by allowing browsing and scanning without an account, while gating the parts of the product that write data (reviews, watchlists) behind lightweight auth — trading a small security surface for a much lower signup wall.
+Guest browsing needed to work without a signup wall, but writing a review or building a watchlist needed a real account. So anyone can browse and scan; only signed-in users can save.
 
 ## Outcome
 
-The app shipped on both the App Store and Google Play, and was covered by Forbes, which described it as aiming to be "the Vivino for premium spirits." Both a public listing and a specific piece of press coverage are independently checkable, unlike a claim on their own.
+The app shipped on the App Store and Google Play. Forbes covered it, describing the ambition as building "the Vivino for premium spirits" — a specific, checkable line, not a generic compliment.
