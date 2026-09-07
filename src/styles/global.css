@@ -471,10 +471,10 @@ section:last-of-type { border-bottom: none; }
   transition: color .15s ease, background .2s ease;
 }
 
-.tech-tile img { width: 26px; height: 26px; filter: grayscale(1); opacity: 0.7; transition: opacity .15s ease, filter .15s ease, transform .25s cubic-bezier(.34,1.56,.64,1); }
+.tech-tile img { width: 26px; height: 26px; opacity: 0.88; transition: opacity .15s ease, transform .25s cubic-bezier(.34,1.56,.64,1); }
 
 .tech-tile:hover { color: var(--text); background: var(--surface-2); }
-.tech-tile:hover img { filter: grayscale(0); opacity: 1; transform: translateY(-3px) scale(1.12); }
+.tech-tile:hover img { opacity: 1; transform: translateY(-3px) scale(1.12); }
 
 .tech-name { font-family: var(--font-display); font-size: 0.86rem; }
 
