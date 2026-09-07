@@ -109,7 +109,7 @@ export const experience: ExperienceEntry[] = [
     org: 'Ciright, Inc.',
     dates: 'May 2020 – Jun 2021 · 1 yr 2 mos · India · Hybrid',
     summary:
-      'An enterprise productivity suite carried from prototype through App Store release, built on Firebase, Firestore, and Crashlytics.',
+      'An enterprise productivity suite carried from prototype through App Store release.',
     highlights: [
       'Built <strong>Enterprise Note</strong>, a cross-device note-sync app with sharing and personal knowledge management features.',
       'Built <strong>Ciright Works</strong>, a task and project tracker with document, audio, and media storage for teams.',
