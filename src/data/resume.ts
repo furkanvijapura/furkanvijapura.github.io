@@ -80,7 +80,7 @@ export const socials: SocialLink[] = [
 
 export const heroStats: Stat[] = [
   { num: '9+', label: 'years shipping mobile' },
-  { num: '12', label: 'shipped products' },
+  { num: '4', label: 'shipped products' },
   { num: '5', label: 'companies' },
   { num: '8', label: 'certifications' },
 ];

@@ -1,5 +1,11 @@
 ---
 import { person, heroStats } from '../data/resume';
+import { getCollection } from 'astro:content';
+
+const caseStudyCount = (await getCollection('caseStudies')).length;
+const stats = heroStats.map((s) =>
+  s.label === 'shipped products' ? { ...s, num: String(caseStudyCount) } : s
+);
 ---
 
 <section class="hero" id="about">
@@ -7,7 +13,7 @@ import { person, heroStats } from '../data/resume';
   <p class="hero-lede">{person.heroLede}</p>
 
   <div class="stat-strip" id="stat-strip">
-    {heroStats.map((s) => (
+    {stats.map((s) => (
       <div class="stat">
         <span class="num" data-final={s.num}>{s.num}</span>
         <span class="label">{s.label}</span>
