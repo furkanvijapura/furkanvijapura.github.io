@@ -19,6 +19,7 @@ export interface ShippedApp {
   playStoreUrl?: string;
   icon: string;
   category: string;
+  employer: string;
   description: string;
   caseStudySlug?: string;
 }
@@ -158,6 +159,7 @@ export const shippedApps: ShippedApp[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.bottleraiders',
     icon: '/assets/apps/the-daily-pour.jpg',
     category: 'Food & Drink',
+    employer: 'Wve Labs',
     description:
       'Formerly Bottle Raiders. An AI-powered spirits review app that scans bottle labels and barcodes to surface aggregated ratings, covered by Forbes and Brewbound.',
     caseStudySlug: 'the-daily-pour',
@@ -167,6 +169,7 @@ export const shippedApps: ShippedApp[] = [
     url: 'https://apps.apple.com/us/app/ovvy-real-estate-camera/id6447063745',
     icon: '/assets/apps/ovvy.jpg',
     category: 'Photo & Video',
+    employer: 'Wve Labs',
     description:
       'An AI camera platform that turns a smartphone into a real estate photography tool: a custom native camera module for lag-free zoom, a ProRAW pipeline for faster processing, virtual twilight rendering, and an asynchronous AWS media pipeline behind the scenes.',
     caseStudySlug: 'ovvy',
@@ -176,6 +179,7 @@ export const shippedApps: ShippedApp[] = [
     url: 'https://apps.apple.com/us/app/puff-count-quit-vaping-now/id1488580640',
     icon: '/assets/apps/puff-count.jpg',
     category: 'Lifestyle',
+    employer: 'Wve Labs',
     description:
       'A puff-tracking app with custom quit plans, used by hundreds of thousands according to its own App Store listing, with daily, weekly, and monthly progress visualization and shared quit goals.',
     caseStudySlug: 'puff-count',
@@ -186,6 +190,7 @@ export const shippedApps: ShippedApp[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.thenotme.app',
     icon: '/assets/apps/notme.jpg',
     category: 'Lifestyle',
+    employer: 'Wve Labs',
     description:
       'An enthusiastic consent verification app built on ID-verified profiles, per-meeting QR pairing, and securely stored consent records.',
     caseStudySlug: 'the-notme-app',
@@ -195,8 +200,9 @@ export const shippedApps: ShippedApp[] = [
     url: 'https://apps.apple.com/us/app/dsd-app/id6476902245',
     icon: '/assets/apps/dsd-app.jpg',
     category: 'Medical',
+    employer: 'WeblineIndia',
     description:
-      'An iPad app dentists use to design and simulate smiles, take precise measurements, and share treatment plans with patients and dental labs, shipped as part of the WeblineIndia team.',
+      'An iPad app dentists use to design and simulate smiles, take precise measurements, and share treatment plans with patients and dental labs, built as part of the team.',
   },
   {
     name: 'Fast Tract Diet',
@@ -204,6 +210,7 @@ export const shippedApps: ShippedApp[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.selfhealthpublishing.fasttractdiet',
     icon: '/assets/apps/fast-tract-diet.jpg',
     category: 'Health & Fitness',
+    employer: 'WeblineIndia',
     description:
       'A gut-health tracker built around the Fast Tract Diet\'s FP scoring system: log meals and symptoms, and look up symptom potential across 800+ foods and drinks.',
   },
