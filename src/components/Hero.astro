@@ -1,10 +1,8 @@
 ---
-import { person, heroStats } from '../data/resume';
-import { getCollection } from 'astro:content';
+import { person, heroStats, shippedApps } from '../data/resume';
 
-const caseStudyCount = (await getCollection('caseStudies')).length;
 const stats = heroStats.map((s) =>
-  s.label === 'shipped products' ? { ...s, num: String(caseStudyCount) } : s
+  s.label === 'shipped products' ? { ...s, num: String(shippedApps.length) } : s
 );
 ---
 
