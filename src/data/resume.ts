@@ -27,7 +27,6 @@ export interface Service {
   title: string;
   tag: string;
   description: string;
-  evidence: string;
 }
 
 export interface EducationEntry {
@@ -198,37 +197,30 @@ export const services: Service[] = [
     tag: 'Swift · SwiftUI · SwiftData',
     description:
       'Native iOS apps carried from architecture through App Store release: UIKit and SwiftUI, offline storage, computer vision with ARKit and the Vision framework, and performance tuning.',
-    evidence: '9+ yrs, 5 companies · Coursera "Programming in Swift 5" · Udemy SwiftUI/Swift 6',
   },
   {
     title: 'Flutter Cross-Platform Apps',
     tag: 'Flutter · Dart',
     description:
       'One codebase with a native feel on iOS and Android, proven across enterprise and consumer apps at three companies.',
-    evidence: 'WeblineIndia, Ciright, Wve Labs, majority Dart/Flutter across client work · early adoption of Apple\'s Liquid Glass design system in a production Flutter codebase · Udemy "Flutter & Dart" certification',
   },
   {
     title: 'AI & Agentic Tooling for Dev Workflows',
     tag: 'Claude Code · MCP · GitHub Actions',
     description:
       'Wiring AI assistants into the build pipeline itself: automated pull request review, custom hooks, MCP server integrations, and slash command workflows, not just AI features inside an app.',
-    evidence: 'Anthropic "Claude Code in Action" cert, Mar 2026 · shipped GitHub Actions automation',
   },
   {
     title: 'Serverless Backends & Release Engineering',
     tag: 'Firebase · AWS Amplify · Fastlane',
     description:
       'Serverless backends, crash reporting, analytics, and release automation, so shipping stops being manual.',
-    evidence:
-      'Fastlane automation at WeblineIndia, Ciright, Wve Labs · Firebase/Firestore/Crashlytics across every role',
   },
   {
     title: 'Mobile AI Integration',
     tag: 'Google Gemini · OpenAI · Claude · On-device LLMs',
     description:
       'Wiring generative AI into mobile apps: cloud APIs from Google Gemini, OpenAI, and Anthropic Claude, plus custom on-device LLM inference for fully offline, privacy-first features, across iOS, Android, and Flutter.',
-    evidence:
-      'Anthropic "Claude Code in Action" cert · production experience with Claude and MCP API workflows · Core ML and Vision framework in shipped iOS apps',
   },
 ];
 

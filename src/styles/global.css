@@ -447,13 +447,6 @@ section:last-of-type { border-bottom: none; }
 
 .service p { font-size: 0.94rem; }
 
-.evidence {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--accent-dim);
-  margin-top: 2px;
-}
-
 /* ------------------------------ tech stack ------------------------------ */
 
 .tech-grid {
