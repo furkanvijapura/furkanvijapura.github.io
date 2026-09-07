@@ -198,6 +198,15 @@ export const shippedApps: ShippedApp[] = [
     description:
       'An iPad app dentists use to design and simulate smiles, take precise measurements, and share treatment plans with patients and dental labs, shipped as part of the WeblineIndia team.',
   },
+  {
+    name: 'Fast Tract Diet',
+    url: 'https://apps.apple.com/us/app/fast-tract-diet/id1062915865',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.selfhealthpublishing.fasttractdiet',
+    icon: '/assets/apps/fast-tract-diet.jpg',
+    category: 'Health & Fitness',
+    description:
+      'A gut-health tracker built around the Fast Tract Diet\'s FP scoring system: log meals and symptoms, and look up symptom potential across 800+ foods and drinks.',
+  },
 ];
 
 export const services: Service[] = [
@@ -328,7 +337,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'What apps has Furkan shipped?',
     answer:
-      "Live App Store products from the Wve Labs era include The Daily Pour (formerly Bottle Raiders, an AI spirits review app), Ovvy (an AI real estate photography platform), Puff Count: Quit Vaping Now, and The NotME App. At WeblineIndia, he contributed as part of the team on DSD App, an iPad smile-design tool for dentists, alongside Ciright's Enterprise Note and Ciright Works.",
+      "Live App Store products from the Wve Labs era include The Daily Pour (formerly Bottle Raiders, an AI spirits review app), Ovvy (an AI real estate photography platform), Puff Count: Quit Vaping Now, and The NotME App. At WeblineIndia, he built Fast Tract Diet, a gut-health tracker, and contributed as part of the team on DSD App, an iPad smile-design tool for dentists, alongside Ciright's Enterprise Note and Ciright Works.",
   },
   {
     question: 'Is he available for freelance or consulting work?',
