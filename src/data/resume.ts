@@ -313,6 +313,7 @@ export const techStack: TechItem[] = [
   { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
   { name: 'Android', icon: '/assets/icons/android.svg' },
   { name: 'Dart', icon: '/assets/icons/dart.svg' },
+  { name: 'Objective-C', icon: '/assets/icons/objective-c.svg' },
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
   { name: 'Node.js', icon: '/assets/icons/node-js.svg' },
 ];
@@ -329,11 +330,15 @@ export const integrations: TechItem[] = [
   { name: 'JWT', icon: '/assets/icons/jwt.svg' },
   { name: 'Lottie', icon: '/assets/icons/lottie.svg' },
   { name: 'Facebook', icon: '/assets/icons/facebook.svg' },
+  { name: 'Braintree', icon: '/assets/icons/braintree.svg' },
   { name: 'Fastlane', icon: '/assets/icons/fastlane.svg' },
   { name: 'GitHub Actions', icon: '/assets/icons/github-actions.svg' },
   { name: 'Astro', icon: '/assets/icons/astro.svg' },
   { name: 'Xcode', icon: '/assets/icons/xcode.svg' },
-  { name: 'Claude / Anthropic', icon: '/assets/icons/anthropic.svg' },
+  { name: 'Android Studio', icon: '/assets/icons/android-studio.svg' },
+  { name: 'VS Code', icon: '/assets/icons/vscode.svg' },
+  { name: 'Claude Code', icon: '/assets/icons/anthropic.svg' },
+  { name: 'Antigravity', icon: '/assets/icons/antigravity.svg' },
 ];
 
 export const faqs: FaqEntry[] = [
