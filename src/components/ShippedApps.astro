@@ -1,5 +1,7 @@
 ---
 import { shippedApps } from '../data/resume';
+
+const bothStoresCount = shippedApps.filter((app) => app.playStoreUrl).length;
 ---
 
 <section id="shipped">
@@ -8,7 +10,7 @@ import { shippedApps } from '../data/resume';
     <h2>Shipped, live, verifiable</h2>
   </div>
   <p style="margin-bottom:22px;">
-    Four apps currently live from the Wve Labs era, two of them on both the App Store and Google Play, each verifiable on its own listing.
+    {shippedApps.length} apps currently live, {bothStoresCount} of them on both the App Store and Google Play, each verifiable on its own listing.
   </p>
 
   <div class="apps-grid">
