@@ -371,6 +371,13 @@ section:last-of-type { border-bottom: none; }
 
 .app-card:hover { border-color: var(--accent-dim); }
 
+@media (prefers-reduced-motion: no-preference) {
+  .app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  }
+}
+
 .app-icon {
   width: 64px; height: 64px;
   border-radius: 14px;

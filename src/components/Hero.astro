@@ -6,10 +6,10 @@ import { person, heroStats } from '../data/resume';
   <h1>{person.heroHeadingLine1}<br />Native code, serverless backends, <span class="accent">and AI wired in</span>.</h1>
   <p class="hero-lede">{person.heroLede}</p>
 
-  <div class="stat-strip">
+  <div class="stat-strip" id="stat-strip">
     {heroStats.map((s) => (
       <div class="stat">
-        <span class="num">{s.num}</span>
+        <span class="num" data-final={s.num}>{s.num}</span>
         <span class="label">{s.label}</span>
       </div>
     ))}
@@ -22,3 +22,52 @@ import { person, heroStats } from '../data/resume';
     <a class="btn" href="https://github.com/furkanvijapura" target="_blank" rel="noopener">github.com/furkanvijapura</a>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    var strip = document.getElementById('stat-strip');
+    if (!strip) return;
+
+    function countUp(el) {
+      var final = el.getAttribute('data-final') || '';
+      var match = final.match(/^(\d+)(.*)$/);
+      if (!match) return;
+      var target = parseInt(match[1], 10);
+      var suffix = match[2] || '';
+      var duration = 600;
+      var start = null;
+
+      function step(timestamp) {
+        if (start === null) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = final;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    var fired = false;
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !fired) {
+            fired = true;
+            strip.querySelectorAll('.num').forEach(countUp);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(strip);
+  })();
+</script>
