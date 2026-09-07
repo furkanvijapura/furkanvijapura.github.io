@@ -67,7 +67,7 @@ export const person = {
   lastUpdatedDisplay: '6 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
   heroLede:
-    "I'm a full-stack mobile engineer based in India — the kind of person you can hand a rough idea to and get back a real product. Nine years leading with native iOS and cross-platform Flutter development, architecture through App Store release, backend and infrastructure included, not bolted on. At Wve Labs I've taken a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands from prototype to live listings, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
+    "I'm a full-stack mobile engineer based in India — the kind of person you can hand a rough idea to and get back a real product. Nine years, 30+ shipped apps across iOS, watchOS, iPadOS, and Android, consumer and enterprise alike, leading with native iOS and cross-platform Flutter development, architecture through App Store release, backend and infrastructure included, not bolted on. At Wve Labs I've taken a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands from prototype to live listings, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
 };
 
 export const socials: SocialLink[] = [
@@ -298,6 +298,7 @@ export const certifications: CertEntry[] = [
 
 export const skills: string[] = [
   'Swift', 'SwiftUI', 'SwiftData', 'Flutter', 'Dart', 'REST APIs',
+  'watchOS', 'iPadOS', 'Android',
   'Firebase', 'Crashlytics', 'Firestore', 'AWS Amplify', 'Fastlane',
   'GitHub Actions', 'MCP', 'Claude Code', 'ARKit / Vision', 'CLI tooling',
 ];
@@ -339,7 +340,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'How much experience does he have?',
     answer:
-      'Over nine years of professional mobile development since January 2017 across five companies in India, currently Senior Mobile Developer at Wve Labs since July 2021, where he has worked across 24+ client apps.',
+      'Over nine years of professional mobile development since January 2017, shipping 30+ apps across iOS, watchOS, iPadOS, and Android for both consumer and enterprise clients, across five companies in India. He is currently Senior Mobile Developer at Wve Labs since July 2021, where he has worked across 24+ client apps.',
   },
   {
     question: 'What apps has Furkan shipped?',

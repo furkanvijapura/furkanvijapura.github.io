@@ -2,26 +2,31 @@
 
 > Senior Mobile Engineer based in India, working across native iOS, cross-platform
 > Flutter, and serverless mobile backends. Over nine years of professional mobile development
-> since January 2017 across five companies, currently Senior Mobile Developer at Wve Labs since
-> July 2021. Ships native iOS (Swift, SwiftUI, SwiftData) and cross-platform Flutter apps on
-> serverless backends (Firebase, AWS Amplify), and has recently added AI and agentic tooling such
-> as Claude Code, MCP server integration, and GitHub Actions automation to his mobile engineering
-> workflow.
+> since January 2017, shipping 30+ apps across iOS, watchOS, iPadOS, and Android for consumer
+> and enterprise clients, across five companies, currently Senior Mobile Developer at Wve Labs
+> since July 2021. Ships native iOS (Swift, SwiftUI, SwiftData) and cross-platform Flutter apps
+> on serverless backends (Firebase, AWS Amplify), and has recently added AI and agentic tooling
+> such as Claude Code, MCP server integration, and GitHub Actions automation to his mobile
+> engineering workflow.
 
 ## Verified facts
 
 - Experience: January 2017 to present (9+ years), across AGILE Infoways, Discus Business
   Solutions, WeblineIndia, Ciright Inc., and Wve Labs (current, Senior Mobile Developer, since
   July 2021).
-- Live App Store products from the Wve Labs era:
-  - The Daily Pour (formerly Bottle Raiders): an AI spirits review app that scans bottle labels
-    and barcodes. https://apps.apple.com/us/app/the-daily-pour/id6502606142
-  - Ovvy: Real Estate Camera, an AI real estate photography platform built by Wve Labs.
+- Live, verifiable App Store products:
+  - The Daily Pour (formerly Bottle Raiders), Wve Labs: an AI spirits review app that scans
+    bottle labels and barcodes. https://apps.apple.com/us/app/the-daily-pour/id6502606142
+  - Ovvy: Real Estate Camera, Wve Labs: an AI real estate photography platform.
     https://apps.apple.com/us/app/ovvy-real-estate-camera/id6447063745
-  - Puff Count: Quit Vaping Now, a vaping cessation app used by hundreds of thousands.
+  - Puff Count: Quit Vaping Now, Wve Labs: a vaping cessation app used by hundreds of thousands.
     https://apps.apple.com/us/app/puff-count-quit-vaping-now/id1488580640
-  - The NotME App, a consent verification app.
+  - The NotME App, Wve Labs: a consent verification app.
     https://apps.apple.com/us/app/the-notme-app/id6745784550
+  - DSD App, WeblineIndia: an iPad smile-design tool for dentists, built as part of the team.
+    https://apps.apple.com/us/app/dsd-app/id6476902245
+  - Fast Tract Diet, WeblineIndia: a gut-health tracker with FP-based food scoring.
+    https://apps.apple.com/us/app/fast-tract-diet/id1062915865
 - Certifications: Anthropic "Claude Code in Action" (March 2026), Udemy SwiftUI (2025), Coursera
   "iOS App Store & In-App Purchases" (2021), Coursera "Programming in Swift 5" (2021), Udemy
   "Flutter & Dart" (2020), Udemy "Swift and Xcode Development" (2020), Google Digital Unlocked,
