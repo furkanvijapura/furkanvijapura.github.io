@@ -28,4 +28,4 @@ That same pipeline does more than edit photos. It also generates a shareable pro
 
 ## Outcome
 
-The native camera work and the ProRAW pipeline cut turnaround time by 30%. The app is live on the App Store, with editing typically delivered within hours, and is now used by over 2,000 active realtors according to its own site.
+The native camera work and the ProRAW pipeline made turnaround much faster. The app is live on the App Store, with editing typically delivered within hours, and is now used by over 2,000 active realtors according to its own site.

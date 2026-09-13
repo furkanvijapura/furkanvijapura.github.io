@@ -32,7 +32,7 @@ const personJsonLd = {
   knowsAbout: [
     'iOS Development', 'Swift', 'SwiftUI', 'SwiftData', 'Flutter', 'Dart',
     'Firebase', 'AWS Amplify', 'Fastlane', 'REST APIs', 'GitHub Actions',
-    'Model Context Protocol', 'Claude Code', 'Mobile App Architecture',
+    'Mobile App Architecture',
   ],
   sameAs: socials.map((s) => s.url),
 };
@@ -136,6 +136,30 @@ const appsJsonLd = shippedApps.map((app) => ({
 
       var closeBtn = document.getElementById('copy-toast-close');
       if (closeBtn) closeBtn.addEventListener('click', hideToast);
+    })();
+  </script>
+
+  <script is:inline>
+    (function () {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+
+      var targets = document.querySelectorAll('.reveal');
+      if (!targets.length) return;
+
+      document.documentElement.classList.add('will-reveal');
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      targets.forEach(function (t) { observer.observe(t); });
     })();
   </script>
 </body>

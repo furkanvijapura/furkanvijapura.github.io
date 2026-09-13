@@ -130,6 +130,12 @@ p:last-child { margin-bottom: 0; }
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 3px rgba(62,207,142,0.15);
+  animation: pulse-ring 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(62, 207, 142, 0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(62, 207, 142, 0.05); }
 }
 
 .rail nav {
@@ -287,8 +293,19 @@ section:last-of-type { border-bottom: none; }
   font-weight: 600;
 }
 
-.btn.primary:hover { background: #4fe0a0; }
-.btn:not(.primary):hover { border-color: var(--text-dim); }
+.btn.primary:hover { background: #4fe0a0; box-shadow: 0 0 0 4px rgba(62, 207, 142, 0.18); }
+.btn:not(.primary):hover { border-color: var(--text-dim); box-shadow: 0 0 0 1px rgba(154, 161, 173, 0.15); }
+
+@keyframes pulse-cta {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0.25); }
+  50% { box-shadow: 0 0 0 5px rgba(62, 207, 142, 0); }
+}
+
+.btn.primary { animation: pulse-cta 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn:hover { transform: scale(1.02); }
+}
 
 /* ------------------------------ changelog / experience ------------------------------ */
 
@@ -373,8 +390,8 @@ section:last-of-type { border-bottom: none; }
 
 @media (prefers-reduced-motion: no-preference) {
   .app-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(62, 207, 142, 0.25);
   }
 }
 
@@ -476,6 +493,15 @@ section:last-of-type { border-bottom: none; }
 .tech-tile:hover { color: var(--text); background: var(--surface-2); }
 .tech-tile:hover img { opacity: 1; transform: translateY(-3px) scale(1.12); }
 
+@media (prefers-reduced-motion: no-preference) {
+  .tech-tile:hover {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.02);
+    box-shadow: inset 0 0 0 1px rgba(62, 207, 142, 0.3);
+  }
+}
+
 .tech-name { font-family: var(--font-display); font-size: 0.86rem; }
 
 .sync-note {
@@ -541,6 +567,13 @@ section:last-of-type { border-bottom: none; }
 }
 
 .contact-link:hover { border-color: var(--accent-dim); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .contact-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 1px rgba(62, 207, 142, 0.2);
+  }
+}
 .contact-link .arrow { color: var(--text-faint); font-family: var(--font-mono); }
 
 /* ------------------------------ pro footer ------------------------------ */
@@ -606,6 +639,19 @@ section:last-of-type { border-bottom: none; }
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+/* ------------------------------ scroll reveal ------------------------------ */
+
+.will-reveal .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.will-reveal .reveal.revealed {
+  opacity: 1;
+  transform: none;
 }
 
 /* ------------------------------ mobile rail ------------------------------ */

@@ -20,7 +20,7 @@ Two problems surfaced at different points in the app's life. Early on, the progr
 
 The chart problem had a simple fix: two separate graphs, layered at adjusted opacities, stood in for a proper multi-series chart, without pulling in a heavier library to get there.
 
-The cost problem was fixed on the client. Changing how often and how much data got fetched and displayed cut Firebase's data-transfer costs by more than 90%, without touching the backend at all. It's a smaller, cheaper change than a caching layer, and it came from asking what the client actually needed to request in the first place.
+The cost problem was fixed on the client. Changing how often and how much data got fetched and displayed cut Firebase's data-transfer costs by a large margin, without touching the backend at all. It's a smaller, cheaper change than a caching layer, and it came from asking what the client actually needed to request in the first place.
 
 ## Outcome
 

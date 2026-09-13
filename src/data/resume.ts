@@ -66,8 +66,10 @@ export const person = {
   lastUpdated: '2026-09-06',
   lastUpdatedDisplay: '6 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
+  heroHeadingLine2: 'Native code, serverless backends,',
+  heroHeadingAccent: 'shipped end to end',
   heroLede:
-    "I'm a full-stack mobile engineer based in India — the kind of person you can hand a rough idea to and get back a real product. Nine years, 30+ shipped apps across iOS, watchOS, iPadOS, and Android, consumer and enterprise alike, leading with native iOS and cross-platform Flutter development, architecture through App Store release, backend and infrastructure included, not bolted on. At Wve Labs I've taken a spirits-scanning app, an AI camera platform for real estate photography, and a vaping cessation app used by hundreds of thousands from prototype to live listings, each running on serverless infrastructure I built on Firebase or AWS. Lately I've been folding agentic AI tooling into how I actually build mobile software, not just what it ships.",
+    "I'm a full-stack mobile engineer based in India. Give me a rough idea and I'll turn it into a real app. Nine years and 30+ shipped apps across iOS, watchOS, iPadOS, and Android, for everyday users and businesses alike. I lead with native iOS and Flutter, and I build the whole thing: the app, the backend, and the release process. At Wve Labs I've shipped a spirits-scanning app, a real estate photo app, and a vaping-cessation app used by hundreds of thousands of people. Each one runs on serverless infrastructure I built myself, on Firebase or AWS.",
 };
 
 export const socials: SocialLink[] = [
@@ -94,10 +96,10 @@ export const experience: ExperienceEntry[] = [
     org: 'Wve Labs',
     dates: 'Jul 2021 – Present · 5 yrs 3 mos · India · Hybrid',
     summary:
-      'Full-time iOS and Flutter development across 24+ client apps for external clients, spanning consumer and enterprise work. This past year the role expanded into AI-assisted engineering: automated pull request review, custom hooks, and MCP-based tooling, culminating in an Anthropic Claude Code certification in March 2026.',
+      'Full-time iOS and Flutter developer, working on 24+ client apps across many industries. Consumer apps and business apps alike.',
     highlights: [
       "Shipped <strong>The Daily Pour</strong>, formerly Bottle Raiders: an AI-driven spirits review app that scans bottle labels and barcodes, covered by Forbes and Brewbound.",
-      'Shipped <strong>Ovvy</strong>, an AI-powered real estate photography platform: engineered a custom native camera module for lag-free zoom and lens switching, plus a ProRAW processing pipeline that cut turnaround time by 30 percent.',
+      'Shipped <strong>Ovvy</strong>, an AI-powered real estate photography platform: engineered a custom native camera module for lag-free zoom and lens switching, plus a ProRAW processing pipeline that made photo turnaround much faster.',
       'Shipped <strong>Puff Count: Quit Vaping Now</strong>, a vaping cessation app used by hundreds of thousands with daily, weekly, and monthly progress tracking.',
       'Shipped <strong>The NotME App</strong>, an identity-verified consent logging tool built for dating safety.',
     ],
@@ -230,12 +232,6 @@ export const services: Service[] = [
       'One codebase with a native feel on iOS and Android, proven across enterprise and consumer apps at three companies.',
   },
   {
-    title: 'AI & Agentic Tooling for Dev Workflows',
-    tag: 'Claude Code · MCP · GitHub Actions',
-    description:
-      'Wiring AI assistants into the build pipeline itself: automated pull request review, custom hooks, MCP server integrations, and slash command workflows, not just AI features inside an app.',
-  },
-  {
     title: 'Serverless Backends & Release Engineering',
     tag: 'Firebase · AWS Amplify · Fastlane',
     description:
@@ -245,7 +241,7 @@ export const services: Service[] = [
     title: 'Mobile AI Integration',
     tag: 'Google Gemini · OpenAI · Claude · On-device LLMs',
     description:
-      'Wiring generative AI into mobile apps: cloud APIs from Google Gemini, OpenAI, and Anthropic Claude, plus custom on-device LLM inference for fully offline, privacy-first features, across iOS, Android, and Flutter.',
+      'Wiring AI into mobile apps: cloud AI from Google Gemini, OpenAI, and Anthropic Claude, plus on-device AI that works fully offline, across iOS, Android, and Flutter.',
   },
 ];
 
@@ -345,7 +341,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'What does Furkan specialize in?',
     answer:
-      'Full-stack mobile engineering: native iOS development with Swift and SwiftUI, cross-platform Flutter work, and the serverless backends on Firebase and AWS behind them, with a recent focus on bringing AI and agentic tooling such as Claude Code, MCP, and automated CI review into the mobile engineering workflow itself.',
+      'Full-stack mobile engineering. Native iOS apps with Swift and SwiftUI, cross-platform apps with Flutter, and the backends on Firebase and AWS that power them.',
   },
   {
     question: 'How much experience does he have?',
