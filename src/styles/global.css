@@ -112,32 +112,6 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.4;
 }
 
-.build-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--accent);
-  background: rgba(62, 207, 142, 0.08);
-  border: 1px solid rgba(62, 207, 142, 0.25);
-  padding: 3px 8px;
-  border-radius: var(--radius);
-  margin-top: 12px;
-}
-
-.build-tag .dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(62,207,142,0.15);
-  animation: pulse-ring 2.4s ease-in-out infinite;
-}
-
-@keyframes pulse-ring {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(62, 207, 142, 0.15); }
-  50% { box-shadow: 0 0 0 6px rgba(62, 207, 142, 0.05); }
-}
-
 .rail nav {
   margin-top: 36px;
   display: flex;
@@ -212,20 +186,144 @@ section:last-of-type { border-bottom: none; }
 }
 
 .section-index {
+  position: relative;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--text-faint);
+  transition: color .3s ease;
 }
+
+/* Fills as its section becomes the one being read — scroll-driven, not timed. */
+.section-index::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s cubic-bezier(.22, .61, .36, 1);
+}
+
+.section-active .section-index { color: var(--accent); }
+.section-active .section-index::after { transform: scaleX(1); }
 
 .section-head h2 { font-size: 1.5rem; color: var(--text); }
 
 /* ------------------------------ hero ------------------------------ */
 
+.hero { position: relative; }
+
+/* Hero 3D device — CSS transforms only, driven by --mx/--my set on pointer move.
+   Sits behind the text and never intercepts clicks. */
+.hero-scene {
+  position: absolute;
+  top: -6px;
+  right: -196px;
+  width: 240px;
+  height: 300px;
+  perspective: 900px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.hero-device {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 132px;
+  height: 264px;
+  transform-style: preserve-3d;
+  transform:
+    rotateY(calc(-18deg + var(--mx, 0) * 14deg))
+    rotateX(calc(8deg + var(--my, 0) * -10deg))
+    translateZ(0);
+  transition: transform .45s cubic-bezier(.22, .61, .36, 1);
+}
+
+.hero-device-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(155deg, var(--surface-2) 0%, var(--surface) 60%, #10151c 100%);
+  border: 1px solid var(--line);
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.hero-device-edge {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 1px solid rgba(62, 207, 142, 0.22);
+  transform: translateZ(-10px);
+}
+
+.hero-device-notch {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  width: 42px;
+  height: 5px;
+  margin-left: -21px;
+  border-radius: 3px;
+  background: var(--line);
+}
+
+.hero-device-line {
+  position: absolute;
+  left: 16px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--line);
+}
+
+.hero-device-line.w1 { top: 38px; width: 74px; background: var(--accent-dim); }
+.hero-device-line.w2 { top: 54px; width: 52px; }
+.hero-device-line.w3 { top: 70px; width: 64px; }
+
+.hero-device-chip {
+  position: absolute;
+  left: 16px;
+  top: 96px;
+  width: 62px;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid rgba(62, 207, 142, 0.35);
+  background: rgba(62, 207, 142, 0.07);
+}
+
+.hero-orbit {
+  position: absolute;
+  inset: 12% 8%;
+  border-radius: 50%;
+  border: 1px dashed rgba(62, 207, 142, 0.16);
+  transform: rotateX(72deg) rotateZ(calc(var(--mx, 0) * 10deg));
+  transition: transform .45s cubic-bezier(.22, .61, .36, 1);
+}
+
+/* Only shown where the gutter beside the 700px doc column can actually hold it,
+   so it never sits behind the headline or forces horizontal overflow. */
+@media (max-width: 1280px) {
+  .hero-scene { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-device, .hero-orbit { transition: none; }
+}
+
 .hero h1 {
   font-size: clamp(2rem, 4.4vw, 2.9rem);
   color: var(--text);
   margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
 }
+
+.hero-lede, .stat-strip, .hero-actions { position: relative; z-index: 1; }
 
 .hero h1 .accent { color: var(--accent); }
 
@@ -530,6 +628,51 @@ section:last-of-type { border-bottom: none; }
   margin-top: 8px;
 }
 
+/* ------------------------------ skill tiers ------------------------------ */
+
+.skill-tier { margin-top: 18px; }
+
+.skill-tier-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.skill-tier-name {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.skill-tier-note { font-size: 0.76rem; color: var(--text-faint); }
+
+.chip.chip-core { color: var(--text); border-color: var(--accent-dim); }
+
+/* ------------------------------ industries ------------------------------ */
+
+.industry-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 24px;
+}
+
+.industry-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.industry {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  border-bottom: 1px dotted var(--line);
+}
+
 .list-plain { list-style: none; margin: 0; padding: 0; }
 .list-plain li { padding: 12px 0; border-top: 1px solid var(--line-soft); }
 .list-plain li:first-child { border-top: none; padding-top: 0; }
@@ -650,6 +793,37 @@ section:last-of-type { border-bottom: none; }
 }
 
 .will-reveal .reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Build receipt: case-study constraints print like a terminal build log, one
+   line at a time, once the block scrolls into view. */
+.build-receipt { list-style: none; padding-left: 0 !important; }
+
+.build-receipt li {
+  position: relative;
+  padding-left: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.build-receipt li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-dim);
+}
+
+.will-reveal .build-receipt li {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .32s ease, transform .32s ease;
+  transition-delay: calc(var(--i) * 90ms);
+}
+
+.will-reveal .build-receipt.revealed li {
   opacity: 1;
   transform: none;
 }

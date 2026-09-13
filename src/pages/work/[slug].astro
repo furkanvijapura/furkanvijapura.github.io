@@ -36,8 +36,10 @@ const description = `How ${app} was built: the problem, the architecture decisio
           <div class="cs-meta-grid">
             <div>
               <h3 class="mono">Constraints</h3>
-              <ul>
-                {constraints.map((c: string) => <li>{c}</li>)}
+              <ul class="build-receipt reveal">
+                {constraints.map((c: string, i: number) => (
+                  <li style={`--i:${i}`}>{c}</li>
+                ))}
               </ul>
             </div>
             <div>

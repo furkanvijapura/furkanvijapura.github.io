@@ -7,6 +7,20 @@ const stats = heroStats.map((s) =>
 ---
 
 <section class="hero" id="about">
+  <div class="hero-scene" id="hero-scene" aria-hidden="true">
+    <div class="hero-device">
+      <div class="hero-device-face">
+        <span class="hero-device-notch"></span>
+        <span class="hero-device-line w1"></span>
+        <span class="hero-device-line w2"></span>
+        <span class="hero-device-line w3"></span>
+        <span class="hero-device-chip"></span>
+      </div>
+      <div class="hero-device-edge"></div>
+    </div>
+    <div class="hero-orbit"></div>
+  </div>
+
   <h1>{person.heroHeadingLine1}<br />{person.heroHeadingLine2} <span class="accent">{person.heroHeadingAccent}</span>.</h1>
   <p class="hero-lede">{person.heroLede}</p>
 
@@ -26,6 +40,38 @@ const stats = heroStats.map((s) =>
     <a class="btn" href="https://github.com/furkanvijapura" target="_blank" rel="noopener">github.com/furkanvijapura</a>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    var scene = document.getElementById('hero-scene');
+    if (!scene) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(min-width: 1281px)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    var pending = false, nx = 0, ny = 0;
+
+    function apply() {
+      pending = false;
+      scene.style.setProperty('--mx', nx.toFixed(3));
+      scene.style.setProperty('--my', ny.toFixed(3));
+    }
+
+    window.addEventListener(
+      'pointermove',
+      function (e) {
+        // -1..1 relative to viewport centre; transform-only, so no layout work.
+        nx = (e.clientX / window.innerWidth) * 2 - 1;
+        ny = (e.clientY / window.innerHeight) * 2 - 1;
+        if (!pending) {
+          pending = true;
+          requestAnimationFrame(apply);
+        }
+      },
+      { passive: true }
+    );
+  })();
+</script>
 
 <script is:inline>
   (function () {

@@ -149,17 +149,32 @@ const appsJsonLd = shippedApps.map((app) => ({
 
       document.documentElement.classList.add('will-reveal');
 
+      function reveal(el) {
+        el.classList.add('revealed');
+        observer.unobserve(el);
+      }
+
       var observer = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
+            // Also reveal anything already scrolled past: an anchor jump or a
+            // restored scroll position skips sections, and a section left at
+            // opacity 0 would never come back.
+            if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+              reveal(entry.target);
+            }
           });
         },
         { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
       );
       targets.forEach(function (t) { observer.observe(t); });
+
+      // Safety net: never leave content hidden, whatever the observer does.
+      setTimeout(function () {
+        document.querySelectorAll('.reveal:not(.revealed)').forEach(function (el) {
+          if (el.getBoundingClientRect().top < window.innerHeight) reveal(el);
+        });
+      }, 2000);
     })();
   </script>
 </body>

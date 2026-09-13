@@ -1,5 +1,5 @@
 ---
-import { education, certifications, skills } from '../data/resume';
+import { education, certifications, skillTiers } from '../data/resume';
 ---
 
 <section id="background" class="reveal">
@@ -41,9 +41,17 @@ import { education, certifications, skills } from '../data/resume';
     </div>
   </div>
 
-  <h3 style="font-size:1rem;color:var(--text);margin:32px 0 4px;">Core skills</h3>
-  <div class="chip-row">
-    {skills.map((skill) => <span class="chip">{skill}</span>)}
-  </div>
+  <h3 style="font-size:1rem;color:var(--text);margin:32px 0 4px;">Skills</h3>
+  {skillTiers.map((t) => (
+    <div class="skill-tier">
+      <div class="skill-tier-head">
+        <span class="skill-tier-name mono">{t.tier}</span>
+        <span class="skill-tier-note">{t.note}</span>
+      </div>
+      <div class="chip-row">
+        {t.items.map((skill) => <span class:list={['chip', { 'chip-core': t.tier === 'Core' }]}>{skill}</span>)}
+      </div>
+    </div>
+  ))}
   <p style="margin-top:14px;font-size:0.86rem;">Also builds smaller side projects in Flutter, Node.js, and Vue/Nuxt outside of client work.</p>
 </section>

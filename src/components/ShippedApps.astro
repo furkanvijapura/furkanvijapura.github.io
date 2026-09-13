@@ -1,5 +1,5 @@
 ---
-import { shippedApps } from '../data/resume';
+import { shippedApps, industries } from '../data/resume';
 
 const bothStoresCount = shippedApps.filter((app) => app.playStoreUrl).length;
 ---
@@ -9,9 +9,14 @@ const bothStoresCount = shippedApps.filter((app) => app.playStoreUrl).length;
     <span class="section-index mono">02</span>
     <h2>Shipped, live, verifiable</h2>
   </div>
-  <p style="margin-bottom:22px;">
+  <p style="margin-bottom:14px;">
     {shippedApps.length} apps currently live, {bothStoresCount} of them on both the App Store and Google Play, each verifiable on its own listing.
   </p>
+
+  <div class="industry-row">
+    <span class="industry-label mono">Industries</span>
+    {industries.map((i) => <span class="industry">{i}</span>)}
+  </div>
 
   <div class="apps-grid">
     {shippedApps.map((app) => (
@@ -21,7 +26,6 @@ const bothStoresCount = shippedApps.filter((app) => app.playStoreUrl).length;
           <div class="app-name">{app.name}</div>
           <div class="app-meta">
             <span>{app.category}</span>
-            <span>{app.employer}</span>
           </div>
           <p class="app-desc">{app.description}</p>
           <div class="app-links">

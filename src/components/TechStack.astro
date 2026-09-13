@@ -1,5 +1,5 @@
 ---
-import { techStack, integrations } from '../data/resume';
+import { techStack, integrations, tooling } from '../data/resume';
 ---
 
 <section id="stack" class="reveal">
@@ -19,9 +19,19 @@ import { techStack, integrations } from '../data/resume';
     ))}
   </div>
 
-  <h3 style="font-size:1rem;color:var(--text);margin:28px 0 10px;">Integrations &amp; tooling</h3>
+  <h3 style="font-size:1rem;color:var(--text);margin:28px 0 10px;">Integrations</h3>
   <div class="tech-grid">
     {integrations.map((t) => (
+      <div class="tech-tile">
+        <img src={t.icon} alt="" width="28" height="28" />
+        <span class="tech-name">{t.name}</span>
+      </div>
+    ))}
+  </div>
+
+  <h3 style="font-size:1rem;color:var(--text);margin:28px 0 10px;">Tooling</h3>
+  <div class="tech-grid">
+    {tooling.map((t) => (
       <div class="tech-tile">
         <img src={t.icon} alt="" width="28" height="28" />
         <span class="tech-name">{t.name}</span>

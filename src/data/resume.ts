@@ -62,14 +62,13 @@ export const person = {
   phone: '+91 9727 664094',
   phoneHref: '+919727664094',
   avatar: '/assets/img/avatar.jpg',
-  buildTag: 'v5.3 · Wve Labs · current',
-  lastUpdated: '2026-09-06',
-  lastUpdatedDisplay: '6 Sep 2026',
+  lastUpdated: '2026-09-13',
+  lastUpdatedDisplay: '13 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
   heroHeadingLine2: 'Native code, serverless backends,',
   heroHeadingAccent: 'shipped end to end',
   heroLede:
-    "I'm a full-stack mobile engineer based in India. Give me a rough idea and I'll turn it into a real app. Nine years and 30+ shipped apps across iOS, watchOS, iPadOS, and Android, for everyday users and businesses alike. I lead with native iOS and Flutter, and I build the whole thing: the app, the backend, and the release process. At Wve Labs I've shipped a spirits-scanning app, a real estate photo app, and a vaping-cessation app used by hundreds of thousands of people. Each one runs on serverless infrastructure I built myself, on Firebase or AWS.",
+    "I'm a full-stack mobile engineer based in India. Give me a rough idea and I'll turn it into a real app. Nine years and 30+ shipped apps across iOS, watchOS, iPadOS, and Android, for everyday users and businesses alike. I lead with native iOS and Flutter, and I build the whole thing: the app, the backend, and the release process. I've shipped a spirits-scanning app, a real estate photo app, and a vaping-cessation app used by hundreds of thousands of people. Each one runs on serverless infrastructure I built myself, on Firebase or AWS.",
 };
 
 export const socials: SocialLink[] = [
@@ -83,7 +82,7 @@ export const socials: SocialLink[] = [
 
 export const heroStats: Stat[] = [
   { num: '9+', label: 'years shipping mobile' },
-  { num: '6', label: 'shipped products' },
+  { num: '11', label: 'shipped products' },
   { num: '5', label: 'companies' },
   { num: '8', label: 'certifications' },
 ];
@@ -198,6 +197,55 @@ export const shippedApps: ShippedApp[] = [
     caseStudySlug: 'the-notme-app',
   },
   {
+    name: 'Unity: The Better Dating App',
+    url: 'https://apps.apple.com/us/app/unity-the-better-dating-app/id6698861488',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.mixrdating',
+    icon: '/assets/apps/unity-dating.jpg',
+    category: 'Social Networking',
+    employer: 'Wve Labs',
+    description:
+      'A dating app built around real places and live activity instead of endless swiping. Real-time presence over Socket.IO, map-based discovery with clustered pins, and subscriptions handled through RevenueCat.',
+  },
+  {
+    name: 'CardWhale: Collect, Track, Grow',
+    url: 'https://apps.apple.com/us/app/cardwhale-collect-track-grow/id6757435852',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=app.cardwhale.live',
+    icon: '/assets/apps/cardwhale.jpg',
+    category: 'Reference',
+    employer: 'Wve Labs',
+    description:
+      'A trading card collection tracker for Pokémon, Magic, and sealed product. Catalogue cards with the camera, see what a collection is worth, and follow how it changes over time.',
+  },
+  {
+    name: 'InHealer',
+    url: 'https://apps.apple.com/us/app/inhealer/id6447936654',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dooroowa',
+    icon: '/assets/apps/inhealer.jpg',
+    category: 'Health & Fitness',
+    employer: 'Wve Labs',
+    description:
+      'A self-guided app for managing panic symptoms, built with a clinical psychology practice. Guided audio exercises, reminders, and progress tracking to help people stay in control.',
+  },
+  {
+    name: 'Worldie Draft Futbol',
+    url: 'https://apps.apple.com/us/app/worldie-draft-futbol/id6749269769',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.worldiedraftfutbol',
+    icon: '/assets/apps/worldie-draft-futbol.jpg',
+    category: 'Sports',
+    employer: 'Wve Labs',
+    description:
+      'A fantasy soccer draft game built around international tournaments. Players draft real national teams, compete with friends, and score points as the real matches play out.',
+  },
+  {
+    name: 'Five Star Sitters',
+    url: 'https://apps.apple.com/us/app/five-star-sitters/id1449806107',
+    icon: '/assets/apps/five-star-sitters.jpg',
+    category: 'Lifestyle',
+    employer: 'Wve Labs',
+    description:
+      'An on-call babysitting app for Las Vegas families. Parents set up a family profile and book a vetted, background-checked sitter, with in-app payment through Square and address lookup through Google Places.',
+  },
+  {
     name: 'DSD App',
     url: 'https://apps.apple.com/us/app/dsd-app/id6476902245',
     icon: '/assets/apps/dsd-app.jpg',
@@ -230,6 +278,12 @@ export const services: Service[] = [
     tag: 'Flutter · Dart',
     description:
       'One codebase with a native feel on iOS and Android, proven across enterprise and consumer apps at three companies.',
+  },
+  {
+    title: 'Wearables & Device Integration',
+    tag: 'Garmin ConnectIQ · Strava · watchOS',
+    description:
+      'Connecting phones to the devices people actually wear: Garmin watch pairing and device management on native iOS through the ConnectIQ SDK, plus linking accounts to fitness services like Strava.',
   },
   {
     title: 'Serverless Backends & Release Engineering',
@@ -280,7 +334,7 @@ export const certifications: CertEntry[] = [
   },
   {
     title: 'Swift and Xcode Development',
-    sub: 'Udemy · Jan 2020',
+    sub: 'Udemy · Jun 2020',
     certificateUrl: 'https://www.udemy.com/certificate/UC-0a068419-691e-43e9-8b9c-9b46d90a813d/',
   },
   {
@@ -292,11 +346,64 @@ export const certifications: CertEntry[] = [
   { title: 'IICT Certification', sub: 'International Institute for Consulting and Training' },
 ];
 
+export interface SkillTier {
+  tier: string;
+  note: string;
+  items: string[];
+}
+
+/** Tiers reflect how central each thing is to the work actually shipped, not
+ *  how interesting it is. Core = reached for daily; Working = shipped with
+ *  regularly; Exploring = in real use, still building depth. */
+export const skillTiers: SkillTier[] = [
+  {
+    tier: 'Core',
+    note: 'Reached for every day',
+    items: [
+      'Swift', 'SwiftUI', 'UIKit', 'Objective-C', 'Flutter', 'Dart',
+      'GetX', 'Dio', 'Firebase', 'REST APIs',
+    ],
+  },
+  {
+    tier: 'Working',
+    note: 'Shipped with regularly',
+    items: [
+      'Android', 'Kotlin', 'watchOS', 'iPadOS', 'SwiftData',
+      'Garmin ConnectIQ', 'Strava API', 'ARKit / Vision',
+      'Node.js / Express', 'Cloud Functions', 'MongoDB', 'PostgreSQL',
+      'AWS Amplify', 'AWS S3', 'Socket.IO', 'RevenueCat', 'Stripe',
+      'Google Maps', 'Mapbox', 'Crashlytics', 'Fastlane', 'GitHub Actions',
+    ],
+  },
+  {
+    tier: 'Exploring',
+    note: 'In real use, still going deeper',
+    items: ['Redis', 'Docker', 'MCP', 'Claude Code', 'CLI tooling'],
+  },
+];
+
+/** Named from the categories of the apps actually shipped — each one is
+ *  checkable against a live store listing. */
+export const industries: string[] = [
+  'Spirits & drinks',
+  'Real estate',
+  'Health & wellness',
+  'Dating & personal safety',
+  'Collectibles',
+  'Sports & fantasy',
+  'Childcare',
+  'Dental & medical',
+  'Enterprise productivity',
+];
+
 export const skills: string[] = [
-  'Swift', 'SwiftUI', 'SwiftData', 'Flutter', 'Dart', 'REST APIs',
+  'Swift', 'SwiftUI', 'SwiftData', 'UIKit', 'Objective-C', 'Flutter', 'Dart', 'Kotlin', 'REST APIs',
   'watchOS', 'iPadOS', 'Android',
-  'Firebase', 'Crashlytics', 'Firestore', 'AWS Amplify', 'Fastlane',
-  'GitHub Actions', 'MCP', 'Claude Code', 'ARKit / Vision', 'CLI tooling',
+  'Garmin ConnectIQ', 'Strava API', 'GetX', 'Dio',
+  'Firebase', 'Cloud Functions', 'Crashlytics', 'Firestore', 'AWS Amplify', 'AWS S3',
+  'PostgreSQL', 'MongoDB', 'Redis', 'Socket.IO', 'Node.js / Express',
+  'RevenueCat', 'Stripe', 'Fastlane', 'GitHub Actions', 'Docker',
+  'MCP', 'Claude Code', 'ARKit / Vision', 'CLI tooling',
 ];
 
 export interface TechItem {
@@ -310,29 +417,40 @@ export const techStack: TechItem[] = [
   { name: 'Android', icon: '/assets/icons/android.svg' },
   { name: 'Dart', icon: '/assets/icons/dart.svg' },
   { name: 'Objective-C', icon: '/assets/icons/objective-c.svg' },
+  { name: 'Kotlin', icon: '/assets/icons/kotlin.svg' },
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
   { name: 'Node.js', icon: '/assets/icons/node-js.svg' },
 ];
 
+/** Third-party services and SDKs the apps themselves talk to. */
 export const integrations: TechItem[] = [
+  { name: 'Garmin ConnectIQ', icon: '/assets/icons/garmin.svg' },
+  { name: 'Strava', icon: '/assets/icons/strava.svg' },
   { name: 'Firebase', icon: '/assets/icons/firebase.svg' },
   { name: 'AWS Amplify', icon: '/assets/icons/aws-amplify.svg' },
   { name: 'MongoDB', icon: '/assets/icons/mongodb.svg' },
+  { name: 'PostgreSQL', icon: '/assets/icons/postgresql.svg' },
+  { name: 'Redis', icon: '/assets/icons/redis.svg' },
   { name: 'Socket.IO', icon: '/assets/icons/socket-io.svg' },
   { name: 'Stripe', icon: '/assets/icons/stripe.svg' },
   { name: 'RevenueCat', icon: '/assets/icons/revenuecat.svg' },
-  { name: 'Mapbox', icon: '/assets/icons/mapbox.svg' },
+  { name: 'Braintree', icon: '/assets/icons/braintree.svg' },
   { name: 'Google Maps', icon: '/assets/icons/google-maps.svg' },
+  { name: 'Mapbox', icon: '/assets/icons/mapbox.svg' },
+  { name: 'Facebook', icon: '/assets/icons/facebook.svg' },
   { name: 'JWT', icon: '/assets/icons/jwt.svg' },
   { name: 'Lottie', icon: '/assets/icons/lottie.svg' },
-  { name: 'Facebook', icon: '/assets/icons/facebook.svg' },
-  { name: 'Braintree', icon: '/assets/icons/braintree.svg' },
-  { name: 'Fastlane', icon: '/assets/icons/fastlane.svg' },
-  { name: 'GitHub Actions', icon: '/assets/icons/github-actions.svg' },
-  { name: 'Astro', icon: '/assets/icons/astro.svg' },
+];
+
+/** What the work gets built, shipped, and released with. */
+export const tooling: TechItem[] = [
   { name: 'Xcode', icon: '/assets/icons/xcode.svg' },
   { name: 'Android Studio', icon: '/assets/icons/android-studio.svg' },
   { name: 'VS Code', icon: '/assets/icons/vscode.svg' },
+  { name: 'Fastlane', icon: '/assets/icons/fastlane.svg' },
+  { name: 'GitHub Actions', icon: '/assets/icons/github-actions.svg' },
+  { name: 'Docker', icon: '/assets/icons/docker.svg' },
+  { name: 'Astro', icon: '/assets/icons/astro.svg' },
   { name: 'Claude Code', icon: '/assets/icons/anthropic.svg' },
   { name: 'Antigravity', icon: '/assets/icons/antigravity.svg' },
 ];
@@ -351,7 +469,7 @@ export const faqs: FaqEntry[] = [
   {
     question: 'What apps has Furkan shipped?',
     answer:
-      "Live App Store products from the Wve Labs era include The Daily Pour (formerly Bottle Raiders, an AI spirits review app), Ovvy (an AI real estate photography platform), Puff Count: Quit Vaping Now, and The NotME App. At WeblineIndia, he built Fast Tract Diet, a gut-health tracker, and contributed as part of the team on DSD App, an iPad smile-design tool for dentists, alongside Ciright's Enterprise Note and Ciright Works.",
+      "Eleven apps are live on the App Store, seven of them on Google Play too. They include The Daily Pour (formerly Bottle Raiders, an AI spirits review app), Ovvy (an AI real estate photography platform), Puff Count: Quit Vaping Now, The NotME App, Unity (a dating app), CardWhale (a trading card tracker), InHealer (panic support), Worldie Draft Futbol (fantasy soccer), and Five Star Sitters (on-call babysitting). Earlier work includes Fast Tract Diet, a gut-health tracker, DSD App, an iPad smile-design tool for dentists built as part of the team, and Ciright's Enterprise Note and Ciright Works.",
   },
   {
     question: 'Is he available for freelance or consulting work?',
