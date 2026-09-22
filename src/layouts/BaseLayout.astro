@@ -10,6 +10,7 @@ interface Props {
 const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/assets/img/avatar.jpg', Astro.site);
+const site = Astro.site?.origin ?? '';
 
 const personJsonLd = {
   '@context': 'https://schema.org',
@@ -101,19 +102,38 @@ const appsJsonLd = shippedApps.map((app) => ({
 <body>
   <slot />
 
+  {/* Shown only on paper. File > Print can't be intercepted the way Ctrl+P is,
+      so rather than printing a dark page, print a card pointing at the PDF. */}
+  <div class="print-card" aria-hidden="true">
+    <h1>{person.name}</h1>
+    <p class="print-role">{person.role} · {person.roleLine}</p>
+    <p class="print-note">
+      This page is designed for screen. The formatted, up-to-date resume is a PDF:
+    </p>
+    <p class="print-url">{site}{person.resumePath}</p>
+    <p class="print-contact">
+      {person.email} · {person.phone} · {person.location}<br />
+      {site}
+    </p>
+  </div>
+
   <div class="copy-toast" id="copy-toast" role="status" aria-live="polite">
-    <span>Copying's disabled here.</span>
-    <a href="#contact">Get in touch instead →</a>
+    <span id="copy-toast-msg">Copying's disabled here.</span>
+    <a href="#contact" id="copy-toast-link">Get in touch instead →</a>
     <button type="button" id="copy-toast-close" aria-label="Dismiss">×</button>
   </div>
 
-  <script is:inline>
+  <script is:inline define:vars={{ resumePath: person.resumePath }}>
     (function () {
       var toast = document.getElementById('copy-toast');
       if (!toast) return;
+      var msgEl = document.getElementById('copy-toast-msg');
+      var linkEl = document.getElementById('copy-toast-link');
       var hideTimer;
 
-      function showToast() {
+      function showToast(message, withLink) {
+        msgEl.textContent = message;
+        linkEl.hidden = !withLink;
         toast.classList.add('visible');
         clearTimeout(hideTimer);
         hideTimer = setTimeout(hideToast, 5000);
@@ -127,11 +147,29 @@ const appsJsonLd = shippedApps.map((app) => ({
         if (e.clipboardData) {
           e.clipboardData.setData('text/plain', 'Contact Furkan Vijapura: furkanvijapura@gmail.com');
         }
-        showToast();
+        showToast("Copying's disabled here.", true);
       });
       document.addEventListener('cut', function (e) {
         e.preventDefault();
-        showToast();
+        showToast("Copying's disabled here.", true);
+      });
+
+      // Ctrl/Cmd+P hands over the PDF resume rather than printing the page —
+      // this is a dark-themed site, so the printed page is not what anyone
+      // reaching for print actually wants.
+      document.addEventListener('keydown', function (e) {
+        if ((e.key || '').toLowerCase() !== 'p') return;
+        if (!(e.metaKey || e.ctrlKey) || e.altKey || e.shiftKey) return;
+        e.preventDefault();
+
+        var a = document.createElement('a');
+        a.href = resumePath;
+        a.download = '';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        showToast('Downloading the PDF resume instead of printing.', false);
       });
 
       var closeBtn = document.getElementById('copy-toast-close');

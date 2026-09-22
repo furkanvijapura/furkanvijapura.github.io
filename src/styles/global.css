@@ -956,3 +956,42 @@ section:last-of-type { border-bottom: none; }
 @media (max-width: 500px) {
   .copy-toast span:first-child { white-space: normal; }
 }
+
+/* ------------------------------- print ---------------------------------- */
+
+/* The print card is paper-only; the site itself is screen-only. */
+.print-card { display: none; }
+
+@media print {
+  /* Ctrl/Cmd+P is intercepted and hands over the PDF, but File > Print can't
+     be, so make that path produce something useful rather than a dark page. */
+  .shell,
+  .copy-toast,
+  .hero-scene {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .print-card {
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  .print-card h1 {
+    margin: 0 0 4px;
+    font-size: 22pt;
+    color: #000;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .print-role    { margin: 0 0 22px; font-size: 11pt; color: #333; }
+  .print-note    { margin: 0 0 6px;  font-size: 11pt; color: #000; }
+  .print-url     { margin: 0 0 22px; font-size: 12pt; font-weight: bold; color: #000; word-break: break-all; }
+  .print-contact { font-size: 10pt; color: #333; line-height: 1.6; }
+
+  @page { margin: 16mm; }
+}

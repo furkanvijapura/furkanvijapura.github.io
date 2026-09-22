@@ -62,6 +62,7 @@ export const person = {
   phone: '+91 9727 664094',
   phoneHref: '+919727664094',
   avatar: '/assets/img/avatar.jpg',
+  resumePath: '/furkan-vijapura-resume.pdf',
   lastUpdated: '2026-09-13',
   lastUpdatedDisplay: '13 Sep 2026',
   heroHeadingLine1: 'Ships mobile apps across every platform.',
