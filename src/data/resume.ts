@@ -352,33 +352,33 @@ export interface SkillTier {
   items: string[];
 }
 
-/** Tiers reflect how central each thing is to the work actually shipped, not
- *  how interesting it is. Core = reached for daily; Working = shipped with
- *  regularly; Exploring = in real use, still building depth. */
+/** Core is the platforms everything ships on; Working is what gets shipped
+ *  with regularly alongside them; Exploring is in real use, still deepening. */
 export const skillTiers: SkillTier[] = [
   {
     tier: 'Core',
-    note: 'Reached for every day',
-    items: [
-      'Swift', 'SwiftUI', 'UIKit', 'Objective-C', 'Flutter', 'Dart',
-      'GetX', 'Dio', 'Firebase', 'REST APIs',
-    ],
+    note: 'The platforms everything ships on',
+    items: ['Swift', 'SwiftUI', 'UIKit', 'Objective-C', 'Flutter', 'Dart'],
   },
   {
     tier: 'Working',
     note: 'Shipped with regularly',
     items: [
+      'GetX', 'Dio', 'Firebase', 'REST APIs', 'Cloud Functions', 'Crashlytics',
       'Android', 'Kotlin', 'watchOS', 'iPadOS', 'SwiftData',
       'Garmin ConnectIQ', 'Strava API', 'ARKit / Vision',
-      'Node.js / Express', 'Cloud Functions', 'MongoDB', 'PostgreSQL',
+      'Node.js / Express', 'MongoDB', 'PostgreSQL',
       'AWS Amplify', 'AWS S3', 'Socket.IO', 'RevenueCat', 'Stripe',
-      'Google Maps', 'Mapbox', 'Crashlytics', 'Fastlane', 'GitHub Actions',
+      'Google Maps', 'Mapbox', 'Fastlane', 'GitHub Actions',
     ],
   },
   {
     tier: 'Exploring',
     note: 'In real use, still going deeper',
-    items: ['Redis', 'Docker', 'MCP', 'Claude Code', 'CLI tooling'],
+    items: [
+      'Hugging Face', 'Ollama', 'On-device LLMs',
+      'Redis', 'Docker', 'MCP', 'Claude Code', 'CLI tooling',
+    ],
   },
 ];
 
@@ -396,63 +396,106 @@ export const industries: string[] = [
   'Enterprise productivity',
 ];
 
-export const skills: string[] = [
-  'Swift', 'SwiftUI', 'SwiftData', 'UIKit', 'Objective-C', 'Flutter', 'Dart', 'Kotlin', 'REST APIs',
-  'watchOS', 'iPadOS', 'Android',
-  'Garmin ConnectIQ', 'Strava API', 'GetX', 'Dio',
-  'Firebase', 'Cloud Functions', 'Crashlytics', 'Firestore', 'AWS Amplify', 'AWS S3',
-  'PostgreSQL', 'MongoDB', 'Redis', 'Socket.IO', 'Node.js / Express',
-  'RevenueCat', 'Stripe', 'Fastlane', 'GitHub Actions', 'Docker',
-  'MCP', 'Claude Code', 'ARKit / Vision', 'CLI tooling',
-];
-
 export interface TechItem {
   name: string;
   icon: string;
 }
 
+/* Each list below runs current-first: what's most actively used today leads,
+   legacy or wind-down tools trail. */
+
 export const techStack: TechItem[] = [
   { name: 'Swift', icon: '/assets/icons/swift.svg' },
   { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
-  { name: 'Android', icon: '/assets/icons/android.svg' },
   { name: 'Dart', icon: '/assets/icons/dart.svg' },
-  { name: 'Objective-C', icon: '/assets/icons/objective-c.svg' },
   { name: 'Kotlin', icon: '/assets/icons/kotlin.svg' },
   { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
   { name: 'Node.js', icon: '/assets/icons/node-js.svg' },
+  { name: 'Android', icon: '/assets/icons/android.svg' },
+  { name: 'Objective-C', icon: '/assets/icons/objective-c.svg' },
 ];
 
 /** Third-party services and SDKs the apps themselves talk to. */
 export const integrations: TechItem[] = [
+  { name: 'Firebase', icon: '/assets/icons/firebase.svg' },
+  { name: 'PostgreSQL', icon: '/assets/icons/postgresql.svg' },
+  { name: 'RevenueCat', icon: '/assets/icons/revenuecat.svg' },
+  { name: 'Stripe', icon: '/assets/icons/stripe.svg' },
+  { name: 'AWS Amplify', icon: '/assets/icons/aws-amplify.svg' },
+  { name: 'Redis', icon: '/assets/icons/redis.svg' },
+  { name: 'MongoDB', icon: '/assets/icons/mongodb.svg' },
+  { name: 'Socket.IO', icon: '/assets/icons/socket-io.svg' },
   { name: 'Garmin ConnectIQ', icon: '/assets/icons/garmin.svg' },
   { name: 'Strava', icon: '/assets/icons/strava.svg' },
-  { name: 'Firebase', icon: '/assets/icons/firebase.svg' },
-  { name: 'AWS Amplify', icon: '/assets/icons/aws-amplify.svg' },
-  { name: 'MongoDB', icon: '/assets/icons/mongodb.svg' },
-  { name: 'PostgreSQL', icon: '/assets/icons/postgresql.svg' },
-  { name: 'Redis', icon: '/assets/icons/redis.svg' },
-  { name: 'Socket.IO', icon: '/assets/icons/socket-io.svg' },
-  { name: 'Stripe', icon: '/assets/icons/stripe.svg' },
-  { name: 'RevenueCat', icon: '/assets/icons/revenuecat.svg' },
-  { name: 'Braintree', icon: '/assets/icons/braintree.svg' },
-  { name: 'Google Maps', icon: '/assets/icons/google-maps.svg' },
   { name: 'Mapbox', icon: '/assets/icons/mapbox.svg' },
-  { name: 'Facebook', icon: '/assets/icons/facebook.svg' },
-  { name: 'JWT', icon: '/assets/icons/jwt.svg' },
+  { name: 'Google Maps', icon: '/assets/icons/google-maps.svg' },
   { name: 'Lottie', icon: '/assets/icons/lottie.svg' },
+  { name: 'JWT', icon: '/assets/icons/jwt.svg' },
+  { name: 'Braintree', icon: '/assets/icons/braintree.svg' },
+  { name: 'Facebook', icon: '/assets/icons/facebook.svg' },
 ];
 
-/** What the work gets built, shipped, and released with. */
+/** AI wired into the apps themselves — the cloud models and the on-device
+ *  runtimes behind the Mobile AI Integration service. */
+export const aiIntegrations: TechItem[] = [
+  { name: 'Claude API', icon: '/assets/icons/anthropic.svg' },
+  { name: 'OpenAI', icon: '/assets/icons/openai.svg' },
+  { name: 'Google Gemini', icon: '/assets/icons/googlegemini.svg' },
+  { name: 'Ollama', icon: '/assets/icons/ollama.svg' },
+  { name: 'Hugging Face', icon: '/assets/icons/huggingface.svg' },
+];
+
+/** What the work gets built, tested, shipped, and watched with. */
 export const tooling: TechItem[] = [
-  { name: 'Xcode', icon: '/assets/icons/xcode.svg' },
-  { name: 'Android Studio', icon: '/assets/icons/android-studio.svg' },
-  { name: 'VS Code', icon: '/assets/icons/vscode.svg' },
-  { name: 'Fastlane', icon: '/assets/icons/fastlane.svg' },
-  { name: 'GitHub Actions', icon: '/assets/icons/github-actions.svg' },
-  { name: 'Docker', icon: '/assets/icons/docker.svg' },
-  { name: 'Astro', icon: '/assets/icons/astro.svg' },
   { name: 'Claude Code', icon: '/assets/icons/anthropic.svg' },
+  { name: 'MCP', icon: '/assets/icons/modelcontextprotocol.svg' },
   { name: 'Antigravity', icon: '/assets/icons/antigravity.svg' },
+  { name: 'Xcode', icon: '/assets/icons/xcode.svg' },
+  { name: 'VS Code', icon: '/assets/icons/vscode.svg' },
+  { name: 'GitHub Actions', icon: '/assets/icons/github-actions.svg' },
+  { name: 'Fastlane', icon: '/assets/icons/fastlane.svg' },
+  { name: 'Bitrise', icon: '/assets/icons/bitrise.svg' },
+  { name: 'App Distribution', icon: '/assets/icons/firebase.svg' },
+  { name: 'Postman', icon: '/assets/icons/postman.svg' },
+  { name: 'Sentry', icon: '/assets/icons/sentry.svg' },
+  { name: 'Docker', icon: '/assets/icons/docker.svg' },
+  { name: 'Android Studio', icon: '/assets/icons/android-studio.svg' },
+  { name: 'Astro', icon: '/assets/icons/astro.svg' },
+];
+
+/** Where the work gets planned and tracked. */
+export const planningTools: TechItem[] = [
+  { name: 'Linear', icon: '/assets/icons/linear.svg' },
+  { name: 'Jira', icon: '/assets/icons/jira.svg' },
+  { name: 'Notion', icon: '/assets/icons/notion.svg' },
+  { name: 'Asana', icon: '/assets/icons/asana.svg' },
+  { name: 'Confluence', icon: '/assets/icons/confluence.svg' },
+  { name: 'Trello', icon: '/assets/icons/trello.svg' },
+];
+
+/** Design handoff — what screens get built from. */
+export const collaborationTools: TechItem[] = [
+  { name: 'Figma', icon: '/assets/icons/figma.svg' },
+  { name: 'Sketch', icon: '/assets/icons/sketch.svg' },
+  { name: 'Adobe XD', icon: '/assets/icons/adobexd.svg' },
+];
+
+/** Real tools with no brand icon available (Zeplin and TestFlight aren't in the
+ *  icon set), so they ride along on the PDF rather than getting a tile. */
+const iconlessTools: string[] = ['Zeplin', 'TestFlight'];
+
+/** Flat list for the PDF resume. Declared last so every array it reads is
+ *  already initialised, derived so the page and the PDF can never differ, and
+ *  de-duplicated because tiers and the icon groups legitimately overlap
+ *  (Ollama and Hugging Face appear in both). */
+export const skills: string[] = [
+  ...new Set([
+    ...skillTiers.flatMap((t) => t.items),
+    ...aiIntegrations.map((t) => t.name),
+    ...planningTools.map((t) => t.name),
+    ...collaborationTools.map((t) => t.name),
+    ...iconlessTools,
+  ]),
 ];
 
 export const faqs: FaqEntry[] = [

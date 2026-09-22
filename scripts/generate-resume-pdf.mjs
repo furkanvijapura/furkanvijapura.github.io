@@ -50,11 +50,20 @@ async function main() {
   doc.setAuthor(person.name);
   doc.setSubject(`${person.role}, ${person.roleLine}`);
 
-  const page = doc.addPage([PAGE_W, PAGE_H]);
+  let page = doc.addPage([PAGE_W, PAGE_H]);
   const regular = await doc.embedFont(StandardFonts.Helvetica);
   const bold = await doc.embedFont(StandardFonts.HelveticaBold);
 
+  const FOOTER_Y = MARGIN + 14;
   let y = PAGE_H - MARGIN;
+
+  /** Start a new page when `needed` points of vertical space aren't left, so a
+   *  section can never be cut off or overprint the footer. */
+  function ensureSpace(needed) {
+    if (y - needed >= FOOTER_Y + 16) return;
+    page = doc.addPage([PAGE_W, PAGE_H]);
+    y = PAGE_H - MARGIN;
+  }
 
   function draw(text, { x = MARGIN, size = 10, font = regular, color = INK } = {}) {
     page.drawText(text, { x, y, size, font, color });
@@ -134,40 +143,32 @@ async function main() {
   rule(2, 12);
 
   // Skills
-  sectionHeading('Core Skills');
+  sectionHeading('Skills');
   drawWrapped(skills.join('  ·  '), { size: 9, lineHeight: 12.5, color: INK });
 
   rule(10, 12);
 
-  // Education + Certifications side by side
-  const colW = (CONTENT_W - 24) / 2;
-  const topY = y;
-
+  // Education and Certifications are stacked, never side by side: applicant
+  // tracking systems read a page top-to-bottom, so two columns at the same y
+  // interleave into nonsense ("MCA, Computer Software Engineering" followed by
+  // "Anthropic · Mar 2026"). One entry per line keeps each record intact.
+  ensureSpace(17 + education.slice(0, 3).length * 12.5);
   sectionHeading('Education');
   for (const e of education.slice(0, 3)) {
-    draw(e.title, { size: 9.3, font: bold, color: INK });
-    y -= 11;
-    draw(e.sub, { size: 8.5, color: DIM });
-    y -= 14;
+    draw(`${e.title} — ${e.sub}`, { size: 9, color: INK });
+    y -= 12.5;
   }
 
-  const eduEndY = y;
-  y = topY;
-  const certX = MARGIN + colW + 24;
-  y -= 4;
-  draw('CERTIFICATIONS', { x: certX, size: 10.5, font: bold, color: ACCENT });
-  y -= 13;
-  for (const c of certifications.slice(0, 5)) {
-    draw(c.title, { x: certX, size: 9.3, font: bold, color: INK });
-    y -= 11;
-    draw(c.sub, { x: certX, size: 8.5, color: DIM });
-    y -= 14;
+  y -= 6;
+  ensureSpace(17 + certifications.length * 12.5);
+  sectionHeading('Certifications');
+  for (const c of certifications) {
+    draw(`${c.title} — ${c.sub}`, { size: 9, color: INK });
+    y -= 12.5;
   }
-
-  y = Math.min(eduEndY, y);
 
   // Footer
-  y = MARGIN + 14;
+  y = FOOTER_Y;
   page.drawLine({ start: { x: MARGIN, y }, end: { x: PAGE_W - MARGIN, y }, thickness: 0.75, color: LINE });
   y -= 12;
   draw(`Generated from live data at furkanvijapura.github.io  ·  Updated ${person.lastUpdatedDisplay}`, {

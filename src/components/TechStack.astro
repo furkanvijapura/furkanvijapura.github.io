@@ -1,5 +1,21 @@
 ---
-import { techStack, integrations, tooling } from '../data/resume';
+import {
+  techStack,
+  integrations,
+  aiIntegrations,
+  tooling,
+  planningTools,
+  collaborationTools,
+} from '../data/resume';
+
+const groups = [
+  { title: 'Languages & platforms', items: techStack },
+  { title: 'Integrations', items: integrations },
+  { title: 'AI integrations', items: aiIntegrations },
+  { title: 'Tooling', items: tooling },
+  { title: 'Planning & tracking', items: planningTools },
+  { title: 'Design & collaboration', items: collaborationTools },
+];
 ---
 
 <section id="stack" class="reveal">
@@ -9,33 +25,19 @@ import { techStack, integrations, tooling } from '../data/resume';
   </div>
   <p>The tools behind everything on this page: native, cross-platform, and cloud.</p>
 
-  <h3 style="font-size:1rem;color:var(--text);margin-bottom:10px;">Languages &amp; platforms</h3>
-  <div class="tech-grid">
-    {techStack.map((t) => (
-      <div class="tech-tile">
-        <img src={t.icon} alt="" width="28" height="28" />
-        <span class="tech-name">{t.name}</span>
+  {groups.map((g, gi) => (
+    <>
+      <h3 style={`font-size:1rem;color:var(--text);margin:${gi === 0 ? '0 0 10px' : '28px 0 10px'};`}>
+        {g.title}
+      </h3>
+      <div class="tech-grid">
+        {g.items.map((t) => (
+          <div class="tech-tile">
+            <img src={t.icon} alt="" width="28" height="28" />
+            <span class="tech-name">{t.name}</span>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-
-  <h3 style="font-size:1rem;color:var(--text);margin:28px 0 10px;">Integrations</h3>
-  <div class="tech-grid">
-    {integrations.map((t) => (
-      <div class="tech-tile">
-        <img src={t.icon} alt="" width="28" height="28" />
-        <span class="tech-name">{t.name}</span>
-      </div>
-    ))}
-  </div>
-
-  <h3 style="font-size:1rem;color:var(--text);margin:28px 0 10px;">Tooling</h3>
-  <div class="tech-grid">
-    {tooling.map((t) => (
-      <div class="tech-tile">
-        <img src={t.icon} alt="" width="28" height="28" />
-        <span class="tech-name">{t.name}</span>
-      </div>
-    ))}
-  </div>
+    </>
+  ))}
 </section>
