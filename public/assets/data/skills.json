@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T20:30:56.602Z",
+  "generatedAt": "2026-10-01T10:50:00.905Z",
   "accounts": {
     "furkanvijapura": {
       "ownRepoCount": 11,
@@ -124,16 +124,28 @@
       "bytes": 80271
     },
     {
-      "name": "HTML",
-      "bytes": 40280
-    },
-    {
       "name": "Dart",
       "bytes": 36239
     },
     {
+      "name": "Astro",
+      "bytes": 31194
+    },
+    {
       "name": "CSS",
-      "bytes": 19652
+      "bytes": 30110
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 23961
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 13895
+    },
+    {
+      "name": "HTML",
+      "bytes": 13519
     },
     {
       "name": "Shell",
@@ -146,10 +158,6 @@
     {
       "name": "C",
       "bytes": 1680
-    },
-    {
-      "name": "JavaScript",
-      "bytes": 1483
     },
     {
       "name": "Kotlin",
